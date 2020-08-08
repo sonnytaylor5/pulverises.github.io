@@ -1,3 +1,152 @@
-<html>
-    <img style="position:relative; max-width:100%; max-height:100%" src="https://oldschool.runescape.wiki/images/9/96/Cabbage_detail.png?6348a"/>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/b072bcc959.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're all stinkers</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            color: #ffffff;
+            background-color: #191919;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #twitch-embed {
+            margin: 0;
+            position: absolute;
+            left: calc(50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            width: 100%;
+            height: 578px;
+        }
+
+        .sidebar__chat {
+            height: 100%;
+            width: 340px;
+            float: right;
+        }
+
+        .container {
+            width: calc(100%);
+            position: relative;
+        }
+
+        .sidebar {
+            width: 380px;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            overflow: hidden;
+            display: none;
+            border-left: 1px solid white;
+        }
+
+        .sidebar__openbutton {
+            width: 40px;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .sidebar__btncontainer {
+            width: 160px;
+            top: 50%;
+            position: relative;
+            font-size: 2em;
+            margin: 0;
+            left: 6px;
+        }
+
+
+        .sidebar__openbutton:hover {
+            cursor: pointer;
+            background-color: #282828;
+        }
+
+
+        @media screen and (min-width: 1200px) {
+            #twitch-embed {
+                width: 953px;
+                height: 578px;
+            }
+
+            .sidebar {
+                display: block;
+            }
+
+            .container {
+                width: calc(100% - 380px);
+            }
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $('.sidebar__openbutton').click(function () {
+                if ($('#sidebar__btn').hasClass("fa-arrow-right")) {
+                    $(".container").animate({ "right": "-=170px" }, 1000, function () { });
+                    $(".sidebar").animate({ "right": "-=340px" }, 1000, function () {
+                        $('.sidebar__btn').removeClass("fa-arrow-right").addClass("fa-arrow-left");
+                    });
+                } else {
+                    $(".container").animate({ "right": "+=170px" }, 1000, function () { });
+                    $(".sidebar").animate({ "right": "+=340px" }, 1000, function () {
+                        $('.sidebar__btn').removeClass("fa-arrow-left").addClass("fa-arrow-right");
+                    });
+                }
+            });
+
+            window.setInterval(function () {
+                $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
+                    $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
+                        $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
+                            $('.sidebar__btncontainer').css("left", "6px");
+                        });
+                    });
+                });
+            }, 3000);
+        });
+    </script>
+</head>
+
+<body>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <div class="container">
+        <div id="twitch-embed"></div>
+        <script type="text/javascript">
+            var options = {
+                width: "100%",
+                height: "100%",
+                channel: "pulverises",
+                // only needed if your site is also embedded on embed.example.com and othersite.example.com 
+                parent: ["pulverises.com"]
+            };
+            var player = new Twitch.Player("twitch-embed", options);
+            player.setVolume(0.5);
+        </script>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar__openbutton">
+            <div class="sidebar__btncontainer">
+                <i id="sidebar__btn" class="fas fa-arrow-right sidebar__btn sidebar__openbutton--mid "></i>
+                <i class="fab fa-twitch sidebar__openbutton--mid"></i>
+                <i class="fas fa-comment-alt sidebar__openbutton--mid"></i>
+                <i class="fas fa-arrow-right sidebar__btn sidebar__openbutton--mid"></i>
+            </div>
+        </div>
+        <div class="sidebar__chat">
+            <iframe frameborder="0" scrolling="yes" id="chat"
+                src="https://www.twitch.tv/embed/pulverises/chat?parent=pulverises.com" height="100%" width="340">
+            </iframe>
+        </div>
+    </div>
+</body>
+
 </html>
