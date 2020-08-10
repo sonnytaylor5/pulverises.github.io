@@ -4,192 +4,23 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b072bcc959.js" crossorigin="anonymous"></script>
+    <script src="./scripts/index.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='./css/styles.css' rel='stylesheet'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You're all stinkers</title>
-    <style>
-        body {
-            font-family: Roboto, sans-serif;
-            color: #ffffff;
-            background-color: #191919;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        #twitch-embed {
-            margin: 0;
-            position: absolute;
-            left: calc(50%);
-            -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
-            width: 100%;
-            height: 100%;
-        }
-
-        .sidebar__chat {
-            height: 100%;
-            width: 340px;
-            float: right;
-        }
-
-        .container {
-            width: calc(100%);
-            position: absolute;
-            height: 100%;
-        }
-
-        .sidebar {
-            width: 380px;
-            position: absolute;
-            right: 0;
-            height: 100%;
-            overflow: hidden;
-            display: none;
-            border-left: 1px solid white;
-        }
-
-        .sidebar__openbutton {
-            width: 40px;
-            height: 100%;
-            position: absolute;
-            overflow: hidden;
-        }
-
-        .sidebar__btncontainer {
-            width: 160px;
-            top: 50%;
-            position: relative;
-            font-size: 2em;
-            margin: 0;
-            left: 6px;
-        }
-
-
-        .sidebar__openbutton:hover {
-            cursor: pointer;
-            background-color: #282828;
-        }
-
-
-        @media screen and (min-width: 1200px) {
-            .sidebar {
-                display: block;
-            }
-
-            .container {
-                width: calc(100% - 380px);
-                position: absolute;
-                height: 100%;
-            }
-        }
-
-        @media screen and (max-width: 1200px)
-        {
-            .container{
-                right: 0 !important;
-            }
-        }
-
-        .lds{
-            width: 100vw;
-            height: 100vh;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #191919;
-            z-index: 2;
-        }
-
-        .lds__ring {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
-            left: 50%;
-            top: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-
-        .lds__ring div {
-            box-sizing: border-box;
-            display: block;
-            position: absolute;
-            width: 64px;
-            height: 64px;
-            margin: 8px;
-            border: 8px solid #fff;
-            border-radius: 50%;
-            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-            border-color: #fff transparent transparent transparent;
-        }
-
-        .lds__ring div:nth-child(1) {
-            animation-delay: -0.45s;
-        }
-
-        .lds__ring div:nth-child(2) {
-            animation-delay: -0.3s;
-        }
-
-        .lds__ring div:nth-child(3) {
-            animation-delay: -0.15s;
-        }
-
-        @keyframes lds-ring {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
-
-    <script>
-        $(document).ready(function () {
-            setTimeout(function(){
-                $('.lds').fadeOut("fast");
-            }, 4500);
-
-            $('.sidebar__openbutton').click(function () {
-                if ($('#sidebar__btn').hasClass("fa-arrow-right")) {
-                    $(".container").animate({ "right": "-=170px" }, 1000, function () { });
-                    $(".sidebar").animate({ "right": "-=340px" }, 1000, function () {
-                        $('.sidebar__btn').removeClass("fa-arrow-right").addClass("fa-arrow-left");
-                    });
-                } else {
-                    $(".container").animate({ "right": "+=170px" }, 1000, function () { });
-                    $(".sidebar").animate({ "right": "+=340px" }, 1000, function () {
-                        $('.sidebar__btn').removeClass("fa-arrow-left").addClass("fa-arrow-right");
-                    });
-                }
-            });
-
-            window.setInterval(function () {
-                $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
-                    $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
-                        $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
-                            $('.sidebar__btncontainer').css("left", "6px");
-                        });
-                    });
-                });
-            }, 3000);
-        });
-    </script>
 </head>
 
 <body>
-<div class="lds">
-    <div class="lds__ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="lds">
+        <div class="lds__ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-</div>
 
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <div class="container">
