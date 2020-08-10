@@ -24,7 +24,7 @@
             -ms-transform: translateX(-50%);
             transform: translateX(-50%);
             width: 100%;
-            height: 578px;
+            height: 100%;
         }
 
         .sidebar__chat {
@@ -35,7 +35,8 @@
 
         .container {
             width: calc(100%);
-            position: relative;
+            position: absolute;
+            height: 100%;
         }
 
         .sidebar {
@@ -72,23 +73,87 @@
 
 
         @media screen and (min-width: 1200px) {
-            #twitch-embed {
-                width: 953px;
-                height: 578px;
-            }
-
             .sidebar {
                 display: block;
             }
 
             .container {
                 width: calc(100% - 380px);
+                position: absolute;
+                height: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1200px)
+        {
+            .container{
+                right: 0 !important;
+            }
+        }
+
+        .lds{
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #191919;
+            z-index: 2;
+        }
+
+        .lds__ring {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+            left: 50%;
+            top: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .lds__ring div {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border: 8px solid #fff;
+            border-radius: 50%;
+            animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-color: #fff transparent transparent transparent;
+        }
+
+        .lds__ring div:nth-child(1) {
+            animation-delay: -0.45s;
+        }
+
+        .lds__ring div:nth-child(2) {
+            animation-delay: -0.3s;
+        }
+
+        .lds__ring div:nth-child(3) {
+            animation-delay: -0.15s;
+        }
+
+        @keyframes lds-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
             }
         }
     </style>
 
     <script>
         $(document).ready(function () {
+            setTimeout(function(){
+                $('.lds').fadeOut("fast");
+            }, 4500);
+
             $('.sidebar__openbutton').click(function () {
                 if ($('#sidebar__btn').hasClass("fa-arrow-right")) {
                     $(".container").animate({ "right": "-=170px" }, 1000, function () { });
@@ -117,6 +182,15 @@
 </head>
 
 <body>
+<div class="lds">
+    <div class="lds__ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <div class="container">
         <div id="twitch-embed"></div>
@@ -125,7 +199,6 @@
                 width: "100%",
                 height: "100%",
                 channel: "pulverises",
-                // only needed if your site is also embedded on embed.example.com and othersite.example.com 
                 parent: ["pulverises.com"]
             };
             var player = new Twitch.Player("twitch-embed", options);
