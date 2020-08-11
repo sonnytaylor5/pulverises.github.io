@@ -1,6 +1,7 @@
 $(document).ready(function () {
     setTimeout(function(){
-        $('.lds').fadeOut("fast");
+        $('.loading-spinner-container').fadeOut("fast");
+        $('body').removeClass('noscroll');
     }, 4500);
 
     $('.sidebar__openbutton').click(function () {

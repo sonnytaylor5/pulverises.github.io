@@ -3,74 +3,161 @@ body {
     color: #ffffff;
     background-color: #191919;
     margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.noscroll{
     overflow: hidden;
 }
 
+a {
+    color: #fff;
+}
 
-.lds{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
+.loading-spinner-container {
+    position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 250ms ease-in-out;
+    opacity: 1;
+    pointer-events: none;
+    background-size: cover;
+    background-position: center top;
     background-color: #191919;
-    z-index: 2;
 }
 
-.lds__ring {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-    left: 50%;
-    top: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.loading-spinner {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.lds__ring div {
-    box-sizing: border-box;
-    display: block;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border: 8px solid #fff;
-    border-radius: 50%;
-    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-    border-color: #fff transparent transparent transparent;
+.loading-spinner > div {
+    display: inline-flex;
+    height: 24px;
+    width: 24px;
+    animation: cube 1.5s infinite ease-in-out;
 }
 
-.lds__ring div:nth-child(1) {
-    animation-delay: -0.45s;
+.loading-spinner > div > div {
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/Bloodhound.png");
+    background-size: 72px 72px;
+    background-position: -9999px -9999px;
+    background-repeat: no-repeat;
 }
 
-.lds__ring div:nth-child(2) {
-    animation-delay: -0.3s;
+.loading-spinner div:nth-child(1) {
+    animation-delay: 300ms;
 }
 
-.lds__ring div:nth-child(3) {
-    animation-delay: -0.15s;
+.loading-spinner div:nth-child(1) div {
+    border-radius: 6px 0 0 0;
+    background-position: 0% 0%;
 }
 
-@keyframes lds-ring {
-    0% {
-        transform: rotate(0deg);
+.loading-spinner div:nth-child(2) {
+    animation-delay: 400ms;
+}
+
+.loading-spinner div:nth-child(2) div {
+    background-position: 50% 0%;
+}
+
+.loading-spinner div:nth-child(3) {
+    animation-delay: 500ms;
+}
+
+.loading-spinner div:nth-child(3) div {
+    border-radius: 0 6px 0 0;
+    background-position: 100% 0%;
+}
+
+.loading-spinner div:nth-child(4) {
+    animation-delay: 200ms;
+}
+
+.loading-spinner div:nth-child(4) div {
+    background-position: 0% 50%;
+}
+
+.loading-spinner div:nth-child(5) {
+    animation-delay: 300ms;
+}
+
+.loading-spinner div:nth-child(5) div {
+    background-position: 50% 50%;
+}
+
+.loading-spinner div:nth-child(6) {
+    animation-delay: 400ms;
+}
+
+.loading-spinner div:nth-child(6) div {
+    background-position: 100% 50%;
+}
+
+.loading-spinner div:nth-child(7) {
+    animation-delay: 100ms;
+}
+
+.loading-spinner div:nth-child(7) div {
+    border-radius: 0 0 0 6px;
+    background-position: 0% 100%;
+}
+
+.loading-spinner div:nth-child(8) {
+    animation-delay: 200ms;
+}
+
+.loading-spinner div:nth-child(8) div {
+    background-position: 50% 100%;
+}
+
+.loading-spinner div:nth-child(9) {
+    animation-delay: 300ms;
+}
+
+.loading-spinner div:nth-child(9) div {
+    border-radius: 0 0 6px 0;
+    background-position: 100% 100%;
+}
+
+@keyframes cube {
+    0%,
+    70%,
+    100% {
+        transform: scale(1, 1);
     }
 
-    100% {
-        transform: rotate(360deg);
+    35% {
+        transform: scale(0, 0);
     }
 }
 
 #twitch-embed {
     margin: 0;
-    position: absolute;
+    position: relative;
     left: calc(50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     width: 100%;
     height: 100%;
+}
+
+.sidebar__chat {
+    height: 100%;
+    width: 340px;
+    float: right;
 }
 
 .container {
@@ -81,20 +168,13 @@ body {
 
 .sidebar {
     width: 380px;
-    position: absolute;
+    position: fixed;
     right: 0;
     height: 100%;
     overflow: hidden;
     display: none;
     border-left: 1px solid white;
 }
-
-.sidebar__chat {
-    height: 100%;
-    width: 340px;
-    float: right;
-}
-
 
 .sidebar__openbutton {
     width: 40px;
@@ -112,12 +192,117 @@ body {
     left: 6px;
 }
 
-
 .sidebar__openbutton:hover {
     cursor: pointer;
     background-color: #282828;
 }
 
+.container__socials{
+    float: left;
+}
+
+.container__socials--twitter{
+    width: 240px;
+    height: 240px;
+    background-color:#1a97f0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.fab.fa-twitter.container__social--mini {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    font-size: 2em;
+}
+
+.fab.fa-twitter.container__social--background {
+    font-size: 10em;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 40px;
+    right: 45px;
+    opacity: 0.2;
+}
+
+.container__socials--twitch{
+    width: 240px;
+    height: 240px;
+    background-color: #9147FF;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.fab.fa-twitch.container__social--mini {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    font-size: 2em;
+}
+
+.fab.fa-twitch.container__social--background {
+    font-size: 10em;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 40px;
+    right: 45px;
+    opacity: 0.2;
+}
+
+.container__socials--youtube{
+    width: 240px;
+    height: 240px;
+    background-color: #FF0000;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.fab.fa-youtube.container__social--mini {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    font-size: 2em;
+}
+
+.fab.fa-youtube.container__social--background {
+    font-size: 10em;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 40px;
+    right: 45px;
+    opacity: 0.2;
+}
+
+.container__socials .title{
+    top: 165px;
+    position: relative;
+    left: 35px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.container__socials .name{
+    top: 190px;
+    position: relative;
+    left: -25px;
+    font-size: 1em;
+}
+
+.container__socials--youtube .name{
+    left: -35px;
+}
 
 @media screen and (min-width: 1200px) {
     .sidebar {
