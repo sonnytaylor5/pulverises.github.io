@@ -198,6 +198,11 @@ a {
 }
 
 .container__socials{
+    margin: 0 auto;
+    display: table;
+} 
+
+.container__socials div{
     float: left;
 }
 
@@ -208,8 +213,7 @@ a {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin-top: 1em;
-    margin-left: 1em;
+    margin: 1em;
 }
 
 .fab.fa-twitter.container__social--mini {
@@ -236,8 +240,7 @@ a {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin-top: 1em;
-    margin-left: 1em;
+    margin: 1em;
 }
 
 .fab.fa-twitch.container__social--mini {
@@ -264,8 +267,7 @@ a {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin-top: 1em;
-    margin-left: 1em;
+    margin: 1em;
 }
 
 .fab.fa-youtube.container__social--mini {
@@ -276,6 +278,33 @@ a {
 }
 
 .fab.fa-youtube.container__social--background {
+    font-size: 10em;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 40px;
+    right: 45px;
+    opacity: 0.2;
+}
+
+.container__socials--discord{
+    width: 240px;
+    height: 240px;
+    background-color:#7289D9;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+}
+
+.fab.fa-discord.container__social--mini {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    font-size: 2em;
+}
+
+.fab.fa-discord.container__social--background {
     font-size: 10em;
     position: absolute;
     width: 240px;
@@ -300,8 +329,21 @@ a {
     font-size: 1em;
 }
 
+.container__socials a{
+    text-decoration: none;
+}
+
+
+.container__socials--twitch .name{
+    left: -22px;
+}
+
 .container__socials--youtube .name{
     left: -35px;
+}
+
+.container__socials--discord .name{
+    left: -31px;
 }
 
 @media screen and (min-width: 1200px) {
