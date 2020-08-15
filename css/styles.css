@@ -1,7 +1,7 @@
 body {
     font-family: Roboto, sans-serif;
     color: #ffffff;
-    background-color: #191919;
+    background-color: #18181b;
     margin: 0;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -30,7 +30,7 @@ a {
     pointer-events: none;
     background-size: cover;
     background-position: center top;
-    background-color: #191919;
+    background-color: #18181b;
 }
 
 .loading-spinner {
@@ -181,6 +181,7 @@ a {
     height: 100%;
     position: absolute;
     overflow: hidden;
+    border-right: 1px solid white;
 }
 
 .sidebar__btncontainer {
