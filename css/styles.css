@@ -3,8 +3,7 @@ body {
     color: #ffffff;
     background-color: #18181b;
     margin: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 .noscroll{
@@ -329,6 +328,7 @@ a {
     position: relative;
     overflow: hidden;
     margin: 1em;
+    cursor: pointer;
 }
 
 .fas.fa-lightbulb.container__social--mini {
