@@ -3,15 +3,15 @@ body {
     color: #ffffff;
     background-color: #18181b;
     margin: 0;
+    overflow-x: hidden;
+}
+
+.noscroll {
     overflow: hidden;
 }
 
-.noscroll{
-    overflow: hidden;
-}
-
-.noscroll-modal{
-    position: fixed; 
+.noscroll-modal {
+    position: fixed;
     overflow-y: scroll;
 }
 
@@ -44,14 +44,14 @@ a {
     flex-wrap: wrap;
 }
 
-.loading-spinner > div {
+.loading-spinner>div {
     display: inline-flex;
     height: 24px;
     width: 24px;
     animation: cube 1.5s infinite ease-in-out;
 }
 
-.loading-spinner > div > div {
+.loading-spinner>div>div {
     height: 100%;
     width: 100%;
     background-image: url("../images/Bloodhound.png");
@@ -137,12 +137,9 @@ a {
 }
 
 @keyframes cube {
-    0%,
-    70%,
-    100% {
+    0%, 70%, 100% {
         transform: scale(1, 1);
     }
-
     35% {
         transform: scale(0, 0);
     }
@@ -168,7 +165,6 @@ a {
     width: calc(100%);
     position: absolute;
     height: 100%;
-    overflow: auto;
 }
 
 .sidebar {
@@ -203,19 +199,19 @@ a {
     background-color: #282828;
 }
 
-.container__socials{
+.container__socials {
     margin: 0 auto;
     display: table;
-} 
+}
 
-.container__socials div{
+.container__socials div {
     float: left;
 }
 
-.container__socials--twitter{
+.container__socials--twitter {
     width: 240px;
     height: 240px;
-    background-color:#1a97f0;
+    background-color: #1a97f0;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -239,7 +235,7 @@ a {
     opacity: 0.2;
 }
 
-.container__socials--twitch{
+.container__socials--twitch {
     width: 240px;
     height: 240px;
     background-color: #9147FF;
@@ -266,7 +262,7 @@ a {
     opacity: 0.2;
 }
 
-.container__socials--youtube{
+.container__socials--youtube {
     width: 240px;
     height: 240px;
     background-color: #FF0000;
@@ -293,10 +289,10 @@ a {
     opacity: 0.2;
 }
 
-.container__socials--discord{
+.container__socials--discord {
     width: 240px;
     height: 240px;
-    background-color:#7289D9;
+    background-color: #7289D9;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -320,7 +316,7 @@ a {
     opacity: 0.2;
 }
 
-.container__socials--hideandseek{
+.container__socials--hideandseek {
     width: 240px;
     height: 240px;
     background-color: #827717;
@@ -348,8 +344,7 @@ a {
     opacity: 0.2;
 }
 
-
-.container__socials .title{
+.container__socials .title {
     top: 165px;
     position: relative;
     left: 35px;
@@ -357,26 +352,26 @@ a {
     font-size: 1.1em;
 }
 
-.container__socials .name{
+.container__socials .name {
     top: 190px;
     position: relative;
     left: -25px;
     font-size: 1em;
 }
 
-.container__socials a{
+.container__socials a {
     text-decoration: none;
 }
 
-.container__socials--twitch .name{
+.container__socials--twitch .name {
     left: -22px;
 }
 
-.container__socials--youtube .name{
+.container__socials--youtube .name {
     left: -35px;
 }
 
-.container__socials--discord .name{
+.container__socials--discord .name {
     left: -31px;
 }
 
@@ -384,26 +379,26 @@ a {
     left: -4px;
 }
 
-.modal{
+.modal {
     display: none;
     width: 100vw;
     height: 100vh;
     position: absolute;
-    background-color: rgb(24,24,27,0.8);
+    background-color: rgb(24, 24, 27, 0.8);
 }
 
-.modal__form{
+.modal__form {
     width: 20%;
     height: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     background-color: #F5F5F5;
     padding: 2em;
 }
 
-.form__title{
+.form__title {
     color: #000;
     font-weight: bold;
     font-size: 1.5em;
@@ -447,20 +442,20 @@ textarea.form__desc {
     font-family: roboto;
 }
 
-textarea.form__desc:hover{
+textarea.form__desc:hover {
     background-color: #BEBEBE;
 }
 
 .inputfile {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
 }
 
-.inputfile + label {
+.inputfile+label {
     font-size: 1.2em;
     color: #fff;
     background-color: #18181b;
@@ -472,18 +467,15 @@ textarea.form__desc:hover{
     margin-bottom: 1em;
 }
 
-.inputfile + label .fas.fa-file-upload {
+.inputfile+label .fas.fa-file-upload {
     margin-right: 10px;
     color: #fff;
 }
 
-.inputfile:focus + label,
-.inputfile + label:hover 
-{
-    background-color:  #282828;
+.inputfile:focus+label, .inputfile+label:hover {
+    background-color: #282828;
     cursor: pointer;
 }
-
 
 .form__submit:hover {
     background-color: #282828;
@@ -505,7 +497,7 @@ textarea.form__desc:hover{
     width: 86%;
 }
 
-.form__error{
+.form__error {
     color: red;
     font-weight: bold;
     font-size: 1.5em;
@@ -516,37 +508,50 @@ textarea.form__desc:hover{
     border-left: 5px solid red !important;
 }
 
-.form__label{
+.form__label {
     color: #000;
 }
 
-@media screen and (min-width: 1200px) {
-    .sidebar {
-        display: block;
-    }
+.sidebar {
+    display: block;
+}
 
+.container {
+    width: calc(100% - 380px);
+    position: absolute;
+    height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
     .container {
-        width: calc(100% - 380px);
-        position: absolute;
-        height: 100%;
+        right: 0 !important;
+        width: auto;
+    }
+    .container__socials div {
+        left: 50%;
+        transform: translateX(-50%);
+        margin-right: 3em;
     }
 }
 
-@media screen and (max-width: 1200px)
-{
+@media screen and (max-width: 1200px) {
+    /*
     .container{
         right: 0 !important;
     }
-
-    .modal__form{
+*/
+    .modal__form {
         width: 50%;
     }
 }
 
-#rxbby{
+#rxbby {
     font-size: 2em;
     position: absolute;
     bottom: -4%;
-    left: -4%;
+    left: -15%;
     z-index: 10;
 }
