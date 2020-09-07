@@ -6,12 +6,12 @@ $(document).ready(function () {
 
     $('.sidebar__openbutton').click(function () {
         if ($('#sidebar__btn').hasClass("fa-arrow-right")) {
-            $(".container").animate({ "right": "-=170px" }, 1000, function () { });
+            $(".container").animate({ "right": "-=340px" }, 1000, function () { });
             $(".sidebar").animate({ "right": "-=340px" }, 1000, function () {
                 $('.sidebar__btn').removeClass("fa-arrow-right").addClass("fa-arrow-left");
             });
         } else {
-            $(".container").animate({ "right": "+=170px" }, 1000, function () { });
+            $(".container").animate({ "right": "+=340px" }, 1000, function () { });
             $(".sidebar").animate({ "right": "+=340px" }, 1000, function () {
                 $('.sidebar__btn').removeClass("fa-arrow-left").addClass("fa-arrow-right");
             });
@@ -58,12 +58,6 @@ $(document).ready(function () {
             });
         });
     }, 3000);
-
-    window.setInterval(function () {
-        $('.sidebarsocial__btncontainer').animate({ "left": "-=226px" }, 6000, function () {
-            $('.sidebarsocial__btncontainer').css("left", "6px");
-        });
-    }, 6000);
 
     $('#form__idea').submit(function (e) {
         e.preventDefault();

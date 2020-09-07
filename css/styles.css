@@ -542,19 +542,21 @@ textarea.form__desc:hover {
     position: absolute;
     height: 100%;
 }
-
+.container__socials div {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-right: 3em;
+}
+.sidebarsocial__content{
+    width: 350px;
+}
 @media screen and (max-width: 600px) {
     .sidebar {
         display: none;
     }
     .container {
         right: 0 !important;
-        width: auto;
-    }
-    .container__socials div {
-        left: 50%;
-        transform: translateX(-50%);
-        margin-right: 3em;
+        width: 100%;
     }
 }
 
