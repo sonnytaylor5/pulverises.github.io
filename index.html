@@ -4,7 +4,10 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b072bcc959.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/rxbby.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='./css/styles.css' rel='stylesheet'>
     <meta charset="UTF-8">
@@ -45,6 +48,7 @@
         </div>
     </div>
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <div id="rxbby">🥄</div>
     <div class="container">
         <div id="twitch-embed"></div>
         <script type="text/javascript">
@@ -93,8 +97,6 @@
                 </a>
             </div>
 
-
-
             <div class="container__socials--discord">
                 <a href="https://discord.gg/B2nStss" target="_blank" title="Pulverises Discord | opens in a new window">
                     <i class="fab fa-discord container__social--mini"></i>
@@ -104,6 +106,14 @@
                 </a>
             </div>
 
+            <div class="container__socials--hideandseek">
+                <a>
+                    <i class="fas fa-lightbulb container__social--mini"></i>
+                    <i class="fas fa-lightbulb container__social--background"></i>
+                    <span class="title">Idea</span>
+                    <span class="name">Submit an idea</span>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -118,9 +128,30 @@
         </div>
         <div class="sidebar__chat">
             <iframe frameborder="0" scrolling="yes" id="chat"
-                src="https://www.twitch.tv/embed/pulverises/chat?darkpopout&parent=pulverises.com" height="100%" width="340">
+                src="https://www.twitch.tv/embed/pulverises/chat?darkpopout&parent=pulverises.com" height="100%"
+                width="340">
             </iframe>
         </div>
+    </div>
+
+    <div class="modal">
+        <form id="form__idea" enctype="multipart/form-data" method="POST">
+            <div class="modal__form">
+                <span class="form__title">Submit an idea for hide and seek (TEST - not being currently sent)</span>
+                <span class="form__error" id="form__name-error"></span>
+                <input class="form__name" name="name" placeholder="Your name..">
+                <span class="form__error" id="form__desc-error"></span>
+                <textarea class="form__desc" name="description"
+                    placeholder="Describe where your location is and how to get there - you can either upload an image or CTRL+V one here.."></textarea>
+                <span class="form__error" id="form__file-error"></span>
+                <span class="form__label" id="form__file-label"></span>
+                <input id="fileinput" type="file" name="media" class="inputfile"
+                    accept="image/png, image/jpeg, image/bmp, image/jpg, image/gif" />
+                <label for="fileinput" id="filelabel"><i class="fas fa-file-upload"></i>Upload a screenshot to send</label>
+                <img id="container" style="max-width: 100%; max-height: 25%;"/>
+                <input class="form__submit" id="form__submit" type="submit" value="Submit"/>
+            </div>
+        </form>
     </div>
 </body>
 

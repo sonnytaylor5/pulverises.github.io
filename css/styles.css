@@ -11,6 +11,11 @@ body {
     overflow: hidden;
 }
 
+.noscroll-modal{
+    position: fixed; 
+    overflow-y: scroll;
+}
+
 a {
     color: #fff;
 }
@@ -164,6 +169,7 @@ a {
     width: calc(100%);
     position: absolute;
     height: 100%;
+    overflow: auto;
 }
 
 .sidebar {
@@ -279,12 +285,12 @@ a {
 }
 
 .fab.fa-youtube.container__social--background {
-    font-size: 10em;
+    font-size: 13em;
     position: absolute;
     width: 240px;
     height: 240px;
-    top: 40px;
-    right: 45px;
+    top: 10px;
+    right: 84px;
     opacity: 0.2;
 }
 
@@ -315,6 +321,34 @@ a {
     opacity: 0.2;
 }
 
+.container__socials--hideandseek{
+    width: 240px;
+    height: 240px;
+    background-color: #827717;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 1em;
+}
+
+.fas.fa-lightbulb.container__social--mini {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+    font-size: 2em;
+}
+
+.fas.fa-lightbulb.container__social--background {
+    font-size: 10em;
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 40px;
+    right: 45px;
+    opacity: 0.2;
+}
+
+
 .container__socials .title{
     top: 165px;
     position: relative;
@@ -334,7 +368,6 @@ a {
     text-decoration: none;
 }
 
-
 .container__socials--twitch .name{
     left: -22px;
 }
@@ -345,6 +378,146 @@ a {
 
 .container__socials--discord .name{
     left: -31px;
+}
+
+.container__socials--hideandseek .name {
+    left: -4px;
+}
+
+.modal{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgb(24,24,27,0.8);
+}
+
+.modal__form{
+    width: 20%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #F5F5F5;
+    padding: 2em;
+}
+
+.form__title{
+    color: #000;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 2px;
+}
+
+input.form__name {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    font-size: 1.2em;
+    background-color: #DCDCDC;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+input.form__name:hover {
+    background-color: #BEBEBE;
+}
+
+textarea.form__desc {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40%;
+    font-size: 1.2em;
+    resize: none;
+    background-color: #DCDCDC;
+    margin-bottom: 1em;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid black;
+    padding: 10px;
+    font-family: roboto;
+}
+
+textarea.form__desc:hover{
+    background-color: #BEBEBE;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #18181b;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+.inputfile + label .fas.fa-file-upload {
+    margin-right: 10px;
+    color: #fff;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover 
+{
+    background-color:  #282828;
+    cursor: pointer;
+}
+
+
+.form__submit:hover {
+    background-color: #282828;
+    cursor: pointer;
+}
+
+.form__submit {
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #18181b;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 2px;
+    margin: 0em 1.6em 1.6em 1.6em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 86%;
+}
+
+.form__error{
+    color: red;
+    font-weight: bold;
+    font-size: 1.5em;
+    display: block;
+}
+
+.error {
+    border-left: 5px solid red !important;
+}
+
+.form__label{
+    color: #000;
 }
 
 @media screen and (min-width: 1200px) {
@@ -364,4 +537,16 @@ a {
     .container{
         right: 0 !important;
     }
+
+    .modal__form{
+        width: 50%;
+    }
+}
+
+#rxbby{
+    font-size: 2em;
+    position: absolute;
+    bottom: -4%;
+    left: -4%;
+    z-index: 10;
 }
