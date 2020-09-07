@@ -361,6 +361,9 @@ a {
 
 .container__socials a {
     text-decoration: none;
+    width: 240px;
+    height: 240px;
+    display: inline-block;
 }
 
 .container__socials--twitch .name {
