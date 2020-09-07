@@ -177,7 +177,7 @@ a {
     border-left: 1px solid white;
 }
 
-.sidebar__openbutton {
+.sidebar__openbutton,.sidebarsocial__openbutton{
     width: 40px;
     height: 100%;
     position: absolute;
@@ -185,7 +185,8 @@ a {
     border-right: 1px solid white;
 }
 
-.sidebar__btncontainer {
+
+.sidebar__btncontainer{
     width: 160px;
     top: 50%;
     position: relative;
@@ -194,28 +195,37 @@ a {
     left: 6px;
 }
 
-.sidebar__openbutton:hover {
+.sidebarsocial__btncontainer{
+    width: 320px;
+    top: 50%;
+    position: relative;
+    font-size: 2em;
+    margin: 0;
+    left: 6px;
+}
+
+.sidebar__openbutton:hover,.sidebarsocial__openbutton:hover {
     cursor: pointer;
     background-color: #282828;
 }
 
 .container__socials {
     margin: 0 auto;
-    display: table;
 }
 
 .container__socials div {
     float: left;
+    clear: both;
 }
 
 .container__socials--twitter {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     background-color: #1a97f0;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin: 1em;
+    margin: 0.5em;
 }
 
 .fab.fa-twitter.container__social--mini {
@@ -228,21 +238,21 @@ a {
 .fab.fa-twitter.container__social--background {
     font-size: 10em;
     position: absolute;
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     top: 40px;
     right: 45px;
     opacity: 0.2;
 }
 
 .container__socials--twitch {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     background-color: #9147FF;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin: 1em;
+    margin: 0.5em;
 }
 
 .fab.fa-twitch.container__social--mini {
@@ -255,21 +265,21 @@ a {
 .fab.fa-twitch.container__social--background {
     font-size: 10em;
     position: absolute;
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     top: 40px;
     right: 45px;
     opacity: 0.2;
 }
 
 .container__socials--youtube {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     background-color: #FF0000;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin: 1em;
+    margin: 0.5em;
 }
 
 .fab.fa-youtube.container__social--mini {
@@ -282,21 +292,21 @@ a {
 .fab.fa-youtube.container__social--background {
     font-size: 13em;
     position: absolute;
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     top: 10px;
     right: 84px;
     opacity: 0.2;
 }
 
 .container__socials--discord {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     background-color: #7289D9;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin: 1em;
+    margin: 0.5em;
 }
 
 .fab.fa-discord.container__social--mini {
@@ -309,21 +319,21 @@ a {
 .fab.fa-discord.container__social--background {
     font-size: 10em;
     position: absolute;
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     top: 40px;
     right: 45px;
     opacity: 0.2;
 }
 
 .container__socials--hideandseek {
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     background-color: #827717;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    margin: 1em;
+    margin: 0.5em;
     cursor: pointer;
 }
 
@@ -337,15 +347,15 @@ a {
 .fas.fa-lightbulb.container__social--background {
     font-size: 10em;
     position: absolute;
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     top: 40px;
     right: 45px;
     opacity: 0.2;
 }
 
 .container__socials .title {
-    top: 165px;
+    top: 125px;
     position: relative;
     left: 35px;
     font-weight: bold;
@@ -353,7 +363,7 @@ a {
 }
 
 .container__socials .name {
-    top: 190px;
+    top: 150px;
     position: relative;
     left: -25px;
     font-size: 1em;
@@ -361,8 +371,8 @@ a {
 
 .container__socials a {
     text-decoration: none;
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
     display: inline-block;
 }
 
@@ -380,6 +390,14 @@ a {
 
 .container__socials--hideandseek .name {
     left: -4px;
+}
+
+.container__socials div:first-child {
+    margin-top: 0;
+}
+
+.container__socials div:last-child {
+    margin-bottom: 0;
 }
 
 .modal {
@@ -540,7 +558,7 @@ textarea.form__desc:hover {
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1180px) {
     /*
     .container{
         right: 0 !important;
