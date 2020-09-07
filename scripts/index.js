@@ -6,12 +6,12 @@ $(document).ready(function () {
 
     $('.sidebar__openbutton').click(function () {
         if ($('#sidebar__btn').hasClass("fa-arrow-right")) {
-            $(".container").animate({ "right": "-=340px" }, 1000, function () { });
+            $(".container").animate({ "right": "-=170px" }, 1000, function () { });
             $(".sidebar").animate({ "right": "-=340px" }, 1000, function () {
-                $('.sidebar__btn').removeClass("fa-arrow-right").addClass("fa-arrow-left");
+                $('.sidebar__btn').removeClass("fa-arrow-right").addClass("fa-arrow-left"); 
             });
         } else {
-            $(".container").animate({ "right": "+=340px" }, 1000, function () { });
+            $(".container").animate({ "right": "+=170px" }, 1000, function () { });
             $(".sidebar").animate({ "right": "+=340px" }, 1000, function () {
                 $('.sidebar__btn').removeClass("fa-arrow-left").addClass("fa-arrow-right");
             });
@@ -59,7 +59,7 @@ $(document).ready(function () {
         });
     }, 3000);
 
-    $('#form__idea').submit(function (e) {
+    $('#form__idea').submit(function(e){
         e.preventDefault();
         var data = new FormData($('#form__idea')[0]);
         $.ajax({
@@ -71,18 +71,18 @@ $(document).ready(function () {
             contentType: false,
             cache: false
         })
-            .done(function (data) {
-                if (data.success) {
-                    hideModal();
-                    $('#form__file-label').text("");
-                    document.getElementById("container").src = "";
-                    $('#form__idea')[0].reset();
-                    alert("Your message has been sent.");
-                }
-            });
+        .done(function (data) {
+            if(data.success){
+                hideModal();
+                $('#form__file-label').text("");
+                document.getElementById("container").src = "";
+                $('#form__idea')[0].reset();
+                alert("Your message has been sent.");
+            }           
+        });
     });
 
-
+    
 
     const form = document.getElementById("form__idea");
     const fileInput = document.getElementById("fileinput");
@@ -91,24 +91,23 @@ $(document).ready(function () {
         fileInput.files = e.clipboardData.files;
     });
 
-    document.onpaste = function (pasteEvent) {
+    document.onpaste = function(pasteEvent) {
         // consider the first item (can be easily extended for multiple items)
         var item = pasteEvent.clipboardData.items[0];
-
+      
         if (item.type.indexOf("image") === 0) {
-            var blob = item.getAsFile();
-
-            var reader = new FileReader();
-            reader.onload = function (event) {
-                document.getElementById("container").src = event.target.result;
-            };
-            try {
-                reader.readAsDataURL(blob);
-                $('#form__file-label').text("Pasted image from clipboard");
-            } catch (e) {
-                alert("There was an issue reading your clipboard data.");
-            }
+          var blob = item.getAsFile();
+      
+          var reader = new FileReader();
+          reader.onload = function(event) {
+            document.getElementById("container").src = event.target.result;
+          };
+          try{
+          reader.readAsDataURL(blob);
+          $('#form__file-label').text("Pasted image from clipboard");
+          }catch(e){
+              alert("There was an issue reading your clipboard data.");
+          }
         }
-    }
-
+      }
 });
