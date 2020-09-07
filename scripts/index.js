@@ -75,6 +75,7 @@ $(document).ready(function () {
             if(data.success){
                 hideModal();
                 $('#form__file-label').text("");
+                document.getElementById("container").src = "";
                 $('#form__idea')[0].reset();
                 alert("Your message has been sent.");
             }           
