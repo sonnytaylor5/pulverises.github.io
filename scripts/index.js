@@ -82,9 +82,6 @@ $(document).ready(function () {
         });
     });
 
-    
-
-    const form = document.getElementById("form__idea");
     const fileInput = document.getElementById("fileinput");
 
     window.addEventListener('paste', e => {
