@@ -1,6 +1,10 @@
+@font-face{
+    font-family: OSRS;
+    src: url('../fonts/ttf/RuneScape-Plain-12.ttf');
+}
 body {
-    font-family: Roboto, sans-serif;
-    color: #ffffff;
+    font-family: OSRS;
+    color: yellow;
     background-color: #18181b;
     margin: 0;
     overflow-x: hidden;
@@ -562,3 +566,4 @@ textarea.form__desc:hover {
 .footer{
     padding: 1em 6em 2em;
 }
+
