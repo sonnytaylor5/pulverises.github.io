@@ -546,11 +546,6 @@ textarea.form__desc:hover {
 }
 
 @media screen and (max-width: 1200px) {
-    /*
-    .container{
-        right: 0 !important;
-    }
-*/
     .modal__form {
         width: 50%;
     }
@@ -568,3 +563,14 @@ textarea.form__desc:hover {
     padding: 1em 6em 2em;
 }
 
+.active
+{
+    color: red;
+}
+
+.fas.fa-medal{
+    position: absolute;
+    opacity: 0.25;
+    font-size: 150px;
+    color: yellow;
+}
