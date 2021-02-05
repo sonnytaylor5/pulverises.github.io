@@ -14,22 +14,11 @@ function addBorders(teamNumber){
 $(document).ready(function(){
     $.ajax({url: "https://sonnerrs-bot.herokuapp.com/team/", success: function(result){
         res = result;
-        /*
-        var medalString = '<i class="fas fa-medal" aria-hidden="true"></i>';
-        var completedTilesLead = 0;
-        for(var i = 0; i < res.teams.length; i++)
-        {
-            if(res.teams[i].completedTiles.length && res.teams[i].completedTiles.length > completedTilesLead){
-                completedTilesLead = res.teams[i].completedTiles.length;
-            }
-        }
 
         for(var i = 0; i < res.teams.length; i++){
-            if(res.teams[i].completedTiles.length == completedTilesLead){
-                $('#team' + res.teams[i].teamNumber).append(medalString);
-            }
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].completedTiles.length +"/25</span>");
         }
-        */
+        
       },error:function(result){
         if(result.status == 429){
             $('#subtitle').text("Too many requests. Try again in a minute.");
