@@ -1,6 +1,9 @@
 var res;
+var activeTeam;
+var socket;
 
 function addBorders(teamNumber){  
+    activeTeam = teamNumber;
     $('.tile').removeClass("achieved");
     $('.team').removeClass("active");
     for(var i = 0; i < res.teams.length; i++){
@@ -12,6 +15,25 @@ function addBorders(teamNumber){
     }
 }
 $(document).ready(function(){
+    socket = io("https://sonnerrs-bot.herokuapp.com");
+
+    socket.on('update', function(socketRes){
+        console.log(socketRes);
+        //update global store
+        for(var i = 0; i < res.teams.length; i++){
+            if(res.teams[i].teamNumber == socketRes.teamNumber){
+                res.teams[i] = socketRes;
+            }
+        }
+        if(activeTeam == socketRes.teamNumber){
+            addBorders(socketRes.teamNumber);
+        }
+
+        $('.counter').remove();
+        for(var i = 0; i < res.teams.length; i++){
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].completedTiles.length +"/25</span>");
+        }
+    });
     $.ajax({url: "https://sonnerrs-bot.herokuapp.com/team/", success: function(result){
         res = result;
 
