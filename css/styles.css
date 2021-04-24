@@ -1,4 +1,4 @@
-@font-face{
+@font-face {
     font-family: OSRS;
     src: url('../fonts/ttf/RuneScape-Plain-12.ttf');
 }
@@ -559,18 +559,146 @@ textarea.form__desc:hover {
     z-index: 10;
 }
 
-.footer{
+.footer {
     padding: 1em 6em 2em;
 }
 
-.active
-{
+.active {
     color: red;
 }
 
-.fas.fa-medal{
+.fas.fa-medal {
     position: absolute;
     opacity: 0.25;
     font-size: 150px;
     color: yellow;
+}
+
+.scroll {
+    width: 922px;
+}
+
+html, body {
+    height: 1278px;
+}
+
+.team {
+    box-shadow: 0px 0px 0px 2px inset #18181b
+}
+
+.team, .tile {
+    width: 160px;
+    height: 160px;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word;
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    font-size: 17px;
+}
+
+.tile {
+    cursor: auto;
+}
+
+.team:hover {
+    box-shadow: 0px 0px 0px 2px inset #18181b, 5px 5px 5px #18181b;
+}
+
+.crown {
+    opacity: 0.25;
+    font-size: 7.5rem;
+    top: 10px;
+    position: absolute;
+    color: yellow;
+}
+
+@media screen and (max-width: 921px) {
+    .scroll {
+        width: 615px
+    }
+    .team, .tile {
+        width: 180px;
+        height: 180px;
+        margin: 9px;
+    }
+    .team:nth-child(4) {
+        margin: 10px 10px 10px 110px;
+    }
+    .team:nth-child(5) {
+        margin: 10px 110px 10px 10px;
+    }
+    .fas.fa-medal {
+        font-size: 175px;
+    }
+    .crown {
+        font-size: 8.5rem;
+        top: 20px;
+    }
+    html, body {
+        height: 2350px;
+    }
+}
+
+@media screen and (max-width: 614px) {
+    .scroll {
+        width: 310px;
+    }
+    .team, .tile {
+        width: 120px;
+        height: 120px;
+        margin: 10px !important;
+    }
+    .counter {
+        display: none;
+    }
+    .team:nth-child(5) {
+        margin: 20px 90px 20px 90px !important;
+    }
+    .scrollTopMid, .scrollMid {
+        display: none !important;
+    }
+    html, body {
+        height: 2430px;
+    }
+    .crown {
+        font-size: 5.5rem;
+        top: 20px;
+    }
+    .fas.fa-medal {
+        font-size: 115px;
+    }
+}
+
+.achieved {
+    -webkit-box-shadow: inset 0px 0px 0px 3px red;
+    -moz-box-shadow: inset 0px 0px 0px 3px red;
+    box-shadow: inset 0px 0px 0px 3px red;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    top: 100px;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.grid-item {
+    border-bottom: 1px solid rgba(255, 255, 0, 0.5);
+    margin: 5px 0;
+    border-top: 1px solid rgba(255, 255, 0, 0.5);
 }

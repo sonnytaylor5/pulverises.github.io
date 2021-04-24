@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sign up for COX raids with the Pulverises OSRS clan.">
+<meta name=”robots” content="index">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sonny Taylor">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/b072bcc959.js" crossorigin="anonymous"></script>
+<script src="./scripts/index.js"></script>
+<script src="./scripts/raids.js"></script>
+<script src="./frontend.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href='./css/raid.css' rel='stylesheet'>
+<link href='./css/formelements.css' rel="stylesheet">
+<meta charset="UTF-8">
+<title>Pulverises raids sign up - OSRS</title>
+
+<body>
+    <div class="loading-spinner-container">
+        <div class="loading-spinner">
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <form id="form__raid" enctype="multipart/form-data" method="POST">
+        <h1 class="pulv-heading-xl">Raids Help & Leech Sign-up</h1>
+        <!--OSRS NAME-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="osrsname">
+                    Runescape name
+                </label>
+            </h2>
+            <div id="osrsname-hint" class="pulv-hint">
+                Enter your display name for old school runescape, so we can add you in game.
+            </div>
+            <input class="pulv-input" id="osrsname" name="osrsname" type="text"
+                aria-describedby="osrsname-hint">
+        </div>
+        <!--OSRS NAME-->
+
+        <!--DISCORD NAME-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="discordname">
+                    Discord name
+                </label>
+            </h2>
+            <div id="discordname-hint" class="pulv-hint">
+                Enter your discord username, include the #xxxx. For example: <code>houndhunt#0069</code>
+            </div>
+            <input class="pulv-input" id="discordname" name="discordname" type="text"
+                aria-describedby="discordname-hint">
+        </div>
+        <!--DISCORD NAME-->
+
+        <!--EXPERIENCE-->
+        <div class="pulv-form-group">
+            <fieldset class="pulv-fieldset" aria-describedby="experience-name-hint">
+                <legend class="pulv-fieldset__legend pulv-fieldset__legend--l">
+                    <h2 class="pulv-fieldset__heading">
+                        Experience
+                    </h2>
+                </legend>
+                <div id="experience-name-hint" class="pulv-hint">
+                    Enter the level of your CoX experience.
+                </div>
+
+                <div class="pulv-radios pulv-radios--inline" id="experienceid">
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="experience" name="experience" type="radio" value="None">
+                        <label class="pulv-label pulv-radios__label" for="experience">
+                            None
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="experience-2" name="experience" type="radio" value="Very little">
+                        <label class="pulv-label pulv-radios__label" for="experience-2">
+                            Very little
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="experience-3" name="experience" type="radio" value="Confident">
+                        <label class="pulv-label pulv-radios__label" for="experience-3">
+                            Confident
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="experience-4" name="experience" type="radio" value="Raid leader">
+                        <label class="pulv-label pulv-radios__label" for="experience-4">
+                            Raid leader
+                        </label>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+        <!--EXPERIENCE-->
+
+        <!--KC-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="kc">
+                    Raids KC
+                </label>
+            </h2>
+            <div id="kc-hint" class="pulv-hint">
+                Enter your current CoX kill count.
+            </div>
+            <input class="pulv-input" id="kc" name="kc" type="text"
+                aria-describedby="kc-hint">
+        </div>
+        <!--KC-->
+
+
+        <!--GEAR-->
+        <div class="pulv-form-group">
+            <fieldset class="pulv-fieldset" aria-describedby="gear-hint">
+                <legend class="pulv-fieldset__legend pulv-fieldset__legend--l">
+                    <h2 class="pulv-fieldset__heading">
+                        Gear
+                    </h2>
+                </legend>
+                <div id="gear-hint" class="pulv-hint">
+                    Enter the level of gear that you have.
+                </div>
+
+                <div class="pulv-radios pulv-radios--inline" id="gearid">
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear" name="gear" type="radio" value="Basic">
+                        <label class="pulv-label pulv-radios__label" for="gear">
+                            Basic
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear-2" name="gear" type="radio" value="Average">
+                        <label class="pulv-label pulv-radios__label" for="gear-2">
+                            Average
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear-3" name="gear" type="radio" value="Max (No Bow)">
+                        <label class="pulv-label pulv-radios__label" for="gear-3">
+                            Max (No Bow)
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear-4" name="gear" type="radio" value="Best in slot max gear (Bow/Scythe)">
+                        <label class="pulv-label pulv-radios__label" for="gear-4">
+                            Best in slot max gear (Bow/Scythe)
+                        </label>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+        <!--GEAR-->
+
+
+        <!--REASON-->
+        <div class="pulv-form-group">
+            <fieldset class="pulv-fieldset" aria-describedby="changed-name-hint">
+                <legend class="pulv-fieldset__legend pulv-fieldset__legend--l">
+                    <h2 class="pulv-fieldset__heading">
+                        Reason for joining
+                    </h2>
+                </legend>
+                <div id="changed-name-hint" class="pulv-hint">
+                    Select the reason you want to join a raid.
+                </div>
+
+                <div class="pulv-radios pulv-radios--inline" id="joinid">
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="join" name="join" type="radio" value="Diary">
+                        <label class="pulv-label pulv-radios__label" for="join">
+                            Diary
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="join-2" name="join" type="radio" value="Tablet">
+                        <label class="pulv-label pulv-radios__label" for="join-2">
+                            Tablet
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="join-3" name="join" type="radio" value="To learn">
+                        <label class="pulv-label pulv-radios__label" for="join-3">
+                            To learn
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="join-4" name="join" type="radio" value="Just want to join the raid">
+                        <label class="pulv-label pulv-radios__label" for="join-4">
+                            Just want to join the raid
+                        </label>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+        <!--REASON-->
+
+        <!--TIME-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="timezone">
+                    Timezone
+                </label>
+            </h2>
+            <div id="event-name-hint" class="pulv-hint">
+                Enter your time zone
+            </div>
+            <select class="pulv-select" id="timezone" name="timezone">
+                <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+                <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+                <option value="-10:00">(GMT -10:00) Hawaii</option>
+                <option value="-09:50">(GMT -9:30) Taiohae</option>
+                <option value="-09:00">(GMT -9:00) Alaska</option>
+                <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+                <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+                <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+                <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+                <option value="-04:50">(GMT -4:30) Caracas</option>
+                <option value="-04:00">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+                <option value="-03:50">(GMT -3:30) Newfoundland</option>
+                <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+                <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
+                <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
+                <option value="+00:00" selected="selected">(GMT) Western Europe Time, London, Lisbon, Casablanca
+                </option>
+                <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
+                <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
+                <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+                <option value="+03:50">(GMT +3:30) Tehran</option>
+                <option value="+04:00">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+                <option value="+04:50">(GMT +4:30) Kabul</option>
+                <option value="+05:00">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+                <option value="+05:50">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+                <option value="+05:75">(GMT +5:45) Kathmandu, Pokhara</option>
+                <option value="+06:00">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+                <option value="+06:50">(GMT +6:30) Yangon, Mandalay</option>
+                <option value="+07:00">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+                <option value="+08:00">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+                <option value="+08:75">(GMT +8:45) Eucla</option>
+                <option value="+09:00">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+                <option value="+09:50">(GMT +9:30) Adelaide, Darwin</option>
+                <option value="+10:00">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+                <option value="+10:50">(GMT +10:30) Lord Howe Island</option>
+                <option value="+11:00">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+                <option value="+11:50">(GMT +11:30) Norfolk Island</option>
+                <option value="+12:00">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+                <option value="+12:75">(GMT +12:45) Chatham Islands</option>
+                <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
+                <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
+            </select>
+        </div>
+        <!--TIME-->
+
+        <button class="pulv-button" id="raid-submit">
+            Submit
+        </button>
+
+    </form>
+</body>
+
+</html>
