@@ -130,6 +130,54 @@ $(document).ready(function () {
             });
     });
 
+
+    $('#form__bingosignup').submit(function (e) {
+        e.preventDefault();
+        var ids = ["osrsname", "combatlevel", "experienceid", "gearid", "time", "joinid" ];
+            for (var i = 0; i < ids.length; i++) {
+                if($("#" + ids[i]).prev().hasClass("pulv-error-message")){
+                    $("#" + ids[i]).prev().remove()
+                    if($("#" + ids[i]).is("input")){
+                        $("#" + ids[i]).removeClass("pulv-input--error");
+                        $("#" + ids[i]).parent().removeClass("pulv-form-group--error");
+                    }else{
+                        $("#" + ids[i]).parent().parent().removeClass("pulv-form-group--error");
+                    }
+                }
+            }
+
+        var data = new FormData($('#form__bingosignup')[0]);
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/bingosignup/',
+            enctype: 'multipart/form-data',
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false
+        })
+            .done(function (data) {
+                console.log(data);
+                if (data.success) {
+                    $('#form__bingosignup')[0].reset();
+                    alert("Your message has been sent.");
+                } else {
+                    if (data && data.errors) {
+                        for (var i = 0; i < data.errors.length; i++) {
+                            $('<span id="osrsname-error" class="pulv-error-message"><span class="pulv-visually-hidden">Error:</span> ' + data.errors[i].message + '</span>').insertBefore("#" + data.errors[i].formid);
+                            if($("#" + data.errors[i].formid).is("input")){
+                                $("#" + data.errors[i].formid).addClass("pulv-input--error");
+                                $("#" + data.errors[i].formid).parent().addClass("pulv-form-group--error");
+                            }else{
+                                $("#" + data.errors[i].formid).parent().parent().addClass("pulv-form-group--error");
+                            }
+                        }
+                        $("#" + data.errors[0].formid).parent().attr("tabindex", -1).focus();
+                    }
+                }
+            });
+    });
+
     const fileInput = document.getElementById("fileinput");
 
     window.addEventListener('paste', e => {

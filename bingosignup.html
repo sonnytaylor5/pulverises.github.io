@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sign up for Spring bingo with the Pulverises OSRS clan.">
+<meta name=”robots” content="index">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sonny Taylor">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/b072bcc959.js" crossorigin="anonymous"></script>
+<script src="./scripts/index.js"></script>
+<script src="./frontend.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<link href='./css/raid.css' rel='stylesheet'>
+<link href='./css/formelements.css' rel="stylesheet">
+<meta charset="UTF-8">
+<title>Pulverises raids sign up - OSRS</title>
+
+<body>
+    <div class="loading-spinner-container">
+        <div class="loading-spinner">
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <form id="form__bingosignup" enctype="multipart/form-data" method="POST">
+        <h1 class="pulv-heading-xl">Clueseeker52 Spring Bingo -- 28th May to 6th June</h1>
+        <!--OSRS NAME-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="osrsname">
+                    Runescape name
+                </label>
+            </h2>
+            <div id="osrsname-hint" class="pulv-hint">
+                Enter your display name for old school runescape. This will be the ONLY account you use for the bingo.
+            </div>
+            <input class="pulv-input" id="osrsname" name="osrsname" type="text" aria-describedby="osrsname-hint">
+        </div>
+        <!--OSRS NAME-->
+
+        <!--DISCORD NAME-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="discordname">
+                    Discord name
+                </label>
+            </h2>
+            <div id="discordname-hint" class="pulv-hint">
+                Enter your discord username, include the #xxxx. For example: <code>houndhunt#0069</code>
+            </div>
+            <input class="pulv-input" id="discordname" name="discordname" type="text"
+                aria-describedby="discordname-hint">
+        </div>
+        <!--DISCORD NAME-->
+
+        <!--COMBAT LEVEL-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="combatlevel">
+                    Combat level
+                </label>
+            </h2>
+            <div id="combatlevel-hint" class="pulv-hint">
+                Enter your combat level.</code>
+            </div>
+            <input class="pulv-input" id="combatlevel" name="combatlevel" type="number"
+                aria-describedby="combatlevel-hint">
+        </div>
+        <!--COMBAT LEVEL-->
+
+        <!--EXPERIENCE-->
+        <div class="pulv-form-group">
+            <fieldset class="pulv-fieldset" aria-describedby="experience-name-hint">
+                <legend class="pulv-fieldset__legend pulv-fieldset__legend--l">
+                    <h2 class="pulv-fieldset__heading">
+                        PvM Experience
+                    </h2>
+                </legend>
+                <div id="experience-name-hint" class="pulv-hint">
+                    Enter the level of your PvM experience.
+                </div>
+
+                <div class="pulv-radios pulv-radios--inline" id="experienceid">
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="experience" name="experience" type="radio" value="Low">
+                        <label class="pulv-label pulv-radios__label" for="experience">
+                            Low
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="experience-2" name="experience" type="radio"
+                            value="Medium">
+                        <label class="pulv-label pulv-radios__label" for="experience-2">
+                            Medium
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="experience-3" name="experience" type="radio" value="High">
+                        <label class="pulv-label pulv-radios__label" for="experience-3">
+                            High
+                        </label>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+        <!--EXPERIENCE-->
+
+        <!--BANK VALUE-->
+        <div class="pulv-form-group">
+            <fieldset class="pulv-fieldset" aria-describedby="gear-hint">
+                <legend class="pulv-fieldset__legend pulv-fieldset__legend--l">
+                    <h2 class="pulv-fieldset__heading">
+                        Bank Value
+                    </h2>
+                </legend>
+                <div id="gear-hint" class="pulv-hint">
+                    Enter your bank value.
+                </div>
+
+                <div class="pulv-radios pulv-radios--inline" id="gearid">
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear" name="gear" type="radio" value="0-100m">
+                        <label class="pulv-label pulv-radios__label" for="gear">
+                            0-100m
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear-2" name="gear" type="radio" value="100m-250m">
+                        <label class="pulv-label pulv-radios__label" for="gear-2">
+                            100m-250m
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear-3" name="gear" type="radio" value="250m-500m">
+                        <label class="pulv-label pulv-radios__label" for="gear-3">
+                            250m-500m
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear-4" name="gear" type="radio" value="500m-1b">
+                        <label class="pulv-label pulv-radios__label" for="gear-4">
+                            500m-1b
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="gear-5" name="gear" type="radio" value="1b+">
+                        <label class="pulv-label pulv-radios__label" for="gear-5">
+                            1b+
+                        </label>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+        <!--BANK VALUE-->
+
+        <!--TIME-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="time">
+                    How much can you play?
+                </label>
+            </h2>
+            <div id="time-hint" class="pulv-hint">
+                How many hours a day can you play for? (28th May - 6th June) </code>
+            </div>
+            <input class="pulv-input" id="time" name="time" type="number" aria-describedby="time-hint">
+        </div>
+        <!--TIME-->
+
+
+        <!--TERMS-->
+        <div class="pulv-form-group">
+            <fieldset class="pulv-fieldset" aria-describedby="changed-name-hint">
+                <legend class="pulv-fieldset__legend pulv-fieldset__legend--l">
+                    <h2 class="pulv-fieldset__heading">
+                        Terms
+                    </h2>
+                </legend>
+                <div id="changed-name-hint" class="pulv-hint">
+                    Do you understand by signing up you will have to pay the 10m entry fee by the 28th of May 2021.
+                </div>
+
+                <div class="pulv-radios pulv-radios--inline" id="joinid">
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="join" name="join" type="radio" value="Yes">
+                        <label class="pulv-label pulv-radios__label" for="join">
+                            Yes
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+        <!--TERMS-->
+
+        <button class="pulv-button" id="raid-submit">
+            Submit
+        </button>
+
+    </form>
+</body>
+
+</html>
