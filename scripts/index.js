@@ -149,7 +149,7 @@ $(document).ready(function () {
         var data = new FormData($('#form__bingosignup')[0]);
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:3000/bingosignup/',
+            url: 'https://sonnerrs-bot.herokuapp.com/bingosignup/',
             enctype: 'multipart/form-data',
             data: data,
             processData: false,
