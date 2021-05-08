@@ -93,6 +93,20 @@
         </div>
         <!--COMBAT LEVEL-->
 
+        <!--FRIEND-->
+        <div class="pulv-form-group">
+            <h2 class="pulv-label-wrapper"><label class="pulv-label pulv-label--l" for="friend">
+                    Pair with a friend
+                </label>
+            </h2>
+            <div id="friend-hint" class="pulv-hint">
+                Enter a friends OSRS username, if you wish to be paired with them</code>
+            </div>
+            <input class="pulv-input" id="friend" name="friend" type="text"
+                aria-describedby="friend-hint">
+        </div>
+        <!--FRIEND-->
+
         <!--EXPERIENCE-->
         <div class="pulv-form-group">
             <fieldset class="pulv-fieldset" aria-describedby="experience-name-hint">
@@ -229,6 +243,54 @@
             <input class="pulv-input" id="time" name="time" type="number" aria-describedby="time-hint">
         </div>
         <!--TIME-->
+
+        <!--ACCOUNT TYPE-->
+        <div class="pulv-form-group">
+            <fieldset class="pulv-fieldset" aria-describedby="accounttype-hint">
+                <legend class="pulv-fieldset__legend pulv-fieldset__legend--l">
+                    <h2 class="pulv-fieldset__heading">
+                       Account type
+                    </h2>
+                </legend>
+                <div id="accounttype-hint" class="pulv-hint">
+                    Enter your account type (that you will be using for the bingo).
+                </div>
+
+                <div class="pulv-radios pulv-radios--inline" id="accounttypeid">
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="accounttype" name="accounttype" type="radio" value="Ironman">
+                        <label class="pulv-label pulv-radios__label" for="accounttype">
+                            Iron
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="accounttype-2" name="accounttype" type="radio" value="Hardcore Ironman">
+                        <label class="pulv-label pulv-radios__label" for="accounttype-2">
+                            HC Iron
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="accounttype-3" name="accounttype" type="radio" value="Ultimate Ironman">
+                        <label class="pulv-label pulv-radios__label" for="accounttype-3">
+                            UIM
+                        </label>
+                    </div>
+
+                    <div class="pulv-radios__item">
+                        <input class="pulv-radios__input" id="accounttype-4" name="accounttype" type="radio" value="Normal">
+                        <label class="pulv-label pulv-radios__label" for="accounttype-4">
+                            Normie
+                        </label>
+                    </div>
+
+                </div>
+
+            </fieldset>
+        </div>
+        <!--ACCOUNT TYPE-->
 
 
         <!--TERMS-->
