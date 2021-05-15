@@ -25,6 +25,7 @@ $(document).ready(function(){
                 res.teams[i] = socketRes;
             }
         }
+
         if(activeTeam == socketRes.teamNumber){
             addBorders(socketRes.teamNumber);
         }
@@ -72,4 +73,25 @@ $(document).ready(function(){
         addBorders(5);
         $("#team5").addClass("active");
     });
+
+    $('#team6').click(function(){
+        addBorders(6);
+        $("#team6").addClass("active");
+    });
+
+    $('#team7').click(function(){
+        addBorders(7);
+        $("#team7").addClass("active");
+    });
+
+    $('#team8').click(function(){
+        addBorders(8);
+        $("#team8").addClass("active");
+    });
+
+    $('#team9').click(function(){
+        addBorders(9);
+        $("#team9").addClass("active");
+    });
+    
 });

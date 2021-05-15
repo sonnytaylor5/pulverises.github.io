@@ -579,7 +579,7 @@ textarea.form__desc:hover {
 }
 
 html, body {
-    height: 1278px;
+    height: 1541px;
 }
 
 .team {
@@ -633,12 +633,6 @@ html, body {
         height: 180px;
         margin: 9px;
     }
-    .team:nth-child(4) {
-        margin: 10px 10px 10px 110px;
-    }
-    .team:nth-child(5) {
-        margin: 10px 110px 10px 10px;
-    }
     .fas.fa-medal {
         font-size: 175px;
     }
@@ -647,7 +641,7 @@ html, body {
         top: 20px;
     }
     html, body {
-        height: 2350px;
+        height: 2613px;
     }
 }
 
@@ -663,14 +657,11 @@ html, body {
     .counter {
         display: none;
     }
-    .team:nth-child(5) {
-        margin: 20px 90px 20px 90px !important;
-    }
     .scrollTopMid, .scrollMid {
         display: none !important;
     }
     html, body {
-        height: 2430px;
+        height: 2693px;
     }
     .crown {
         font-size: 5.5rem;
