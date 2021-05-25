@@ -653,6 +653,7 @@ html, body {
         width: 120px;
         height: 120px;
         margin: 10px !important;
+        font-size: 1.5rem;
     }
     .counter {
         display: none;
