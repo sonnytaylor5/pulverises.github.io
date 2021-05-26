@@ -43,7 +43,7 @@ $(document).ready(function(){
 
         $('.counter').remove();
         for(var i = 0; i < res.teams.length; i++){
-            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].completedTiles.length +"/2000</span>");
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/2000</span>");
         }
     });
     $.ajax({url: "https://sonnerrs-bot.herokuapp.com/team/", success: function(result){
