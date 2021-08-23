@@ -129,8 +129,7 @@ $(document).ready(function () {
                 }
             });
     });
-
-
+    
     $('#form__bingosignup').submit(function (e) {
         e.preventDefault();
         var ids = ["osrsname", "combatlevel", "experienceid", "gearid", "time", "joinid" ];
@@ -160,6 +159,8 @@ $(document).ready(function () {
                 console.log(data);
                 if (data.success) {
                     $('#form__bingosignup')[0].reset();
+                    var audio = document.getElementById("audio");
+                    audio.play();
                     alert("Your message has been sent.");
                 } else {
                     if (data && data.errors) {
