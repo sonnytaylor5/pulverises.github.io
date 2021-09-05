@@ -1,5 +1,10 @@
 var errors;
 $(document).ready(function () {
+    var date = new Date();
+    if(date.getTime() < 1630886400000){
+        $('.pulv-heading-signupclosed').css({"display" : "none"});
+    }
+
     setTimeout(function () {
         $('.loading-spinner-container').fadeOut("fast");
         $('body').removeClass('noscroll');
