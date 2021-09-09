@@ -1,0 +1,140 @@
+@font-face {
+    font-family: OSRS;
+    src: url('../fonts/ttf/RuneScape-Plain-12.ttf');
+}
+
+body {
+    font-family: OSRS;
+    color: yellow;
+    background-color: #18181b;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+.tile {
+    position: relative;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.tile:hover .image {
+    opacity: 0.3;
+}
+
+.tile:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    background-color: #18181b;
+    color: yellow;
+    font-style: OSRS;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.title {
+    text-align: center;
+}
+
+.teams {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.team {
+    text-align: center;
+    display: block;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.team:not(.active) {
+    opacity: 0.5;
+}
+
+.team:hover {
+    opacity: 1;
+}
+
+.counter {
+    display: block;
+}
+
+.tile:not(.achieved) img {
+    opacity: 0.5;
+}
+
+.tiles {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 2px;
+    grid-row-gap: 10px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+@media screen and (max-width: 1530px) {
+    .tiles {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(13, 1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 10px;
+    }
+
+    .teams {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .teams {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 2px;
+    }
+
+    .tiles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(25, 1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 10px;
+    }
+}

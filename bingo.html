@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="Pulverises is the content creator behind an oldschool RuneScape ironman series 'Hound Hunt'! The main goal is to achieve the bloodhound pet starting on a fresh level 3 ironman account!">
+    <meta name="description" content="Pulverises OSRS Bingo event">
     <meta name="author" content="Sonny Taylor">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/b072bcc959.js" crossorigin="anonymous"></script>
@@ -14,139 +13,322 @@
     <script src="./scripts/bingo.js"></script>
     <script src="./scripts/socket.io.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link href='./css/styles.css' rel='stylesheet'>
+    <link href='./css/bingo.css' rel='stylesheet'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulverises website - founder of Hound Hunt</title>
-
+    <title>Pulverises Bingo</title>
 </head>
 
 <body>
-    <h1
-        style="font-size: 5rem;left: 50%;position: absolute;transform: translateX(-50%);margin: 0 auto;z-index: 3;top: 50px;text-decoration: underline;">
-        BINGO</h1>
-    <h2 id="subtitle"
-        style="font-size: 3rem;left: 50%;position: absolute;transform: translateX(-50%);margin: 0 auto;z-index: 3;top: 140px;min-width: 228px;">
-        Select a team</h1>
-        <div class="scroll" style="/*! width: 100%; */height: 100%;/*! width: 1244px; */margin: 0 auto;">
-            <div class="scroll" style="position:absolute; margin:10px;">
-                <div class="teams"
-                    style="left: 50%;position: relative;transform: translateX(-50%);margin: 0 auto;z-index: 3;top: 185px;width: 100%;word-wrap: break-word;font-size: 1.70rem;overflow: auto;">
-                    <!--<span class="crown"><i class='fas fa-crown' aria-hidden='true'></i></span>-->
-                    <div class="team" id="team1">Team 1-Inchers</div>
-                    <div class="team" id="team2">Elastic SPAS-12 Sticks</div>
-                    <div class="team" id="team3">Gulag Gobblers</div>
-                    <div class="team" id="team4">Team 4-Skin</div>
-                    <div class="team" id="team5">WahToBWah</div>
-                    <div class="team" id="team6">Team Sex</div>
-                    <div class="team" id="team7">7 inches of Satisfaction</div>
-                    <div class="team" id="team8">Tea, Mate</div>
-                    <div class="team" id="team9">The Nightmares of Bumshiteingham (NoBs)</div>
-                </div>
-                <div class="tiles"
-                    style="left: 50%;position: relative;transform: translateX(-50%);margin: 0 auto;z-index: 3;top: 185px;width: 100%;word-wrap: break-word; font-size: 2rem;">
-                    <div id="1" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/1" alt="Coming soon">
-                    </div>
-                    <div id="2" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/2" alt="Coming soon">
-                    </div>
-                    <div id="3" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/3" alt="Coming soon">
-                    </div>
-                    <div id="4" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/4" alt="Coming soon">
-                    </div>
-                    <div id="5" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/5" alt="Coming soon">
-                    </div>
-                    <div id="6" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/6" alt="Coming soon">
-                    </div>
-                    <div id="7" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/7" alt="Coming soon">
-                    </div>
-                    <div id="8" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/8" alt="Coming soon">
-                    </div>
-                    <div id="9" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/9" alt="Coming soon">
-                    </div>
-                    <div id="10" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/10" alt="Coming soon">
-                    </div>
-                    <div id="11" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/11" alt="Coming soon">
-                    </div>
-                    <div id="12" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/12" alt="Coming soon">
-                    </div>
-                    <div id="13" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/13" alt="Coming soon">
-                    </div>
-                    <div id="14" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/14" alt="Coming soon">
-                    </div>
-                    <div id="15" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/15" alt="Coming soon">
-                    </div>
-                    <div id="16" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/16" alt="Coming soon">
-                    </div>
-                    <div id="17" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/17" alt="Coming soon">
-                    </div>
-                    <div id="18" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/18" alt="Coming soon">
-                    </div>
-                    <div id="19" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/19" alt="Coming soon">
-                    </div>
-                    <div id="20" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/20" alt="Coming soon">
-                    </div>
-                    <div id="21" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/21" alt="Coming soon">
-                    </div>
-                    <div id="22" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/22" alt="Coming soon">
-                    </div>
-                    <div id="23" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/23" alt="Coming soon">
-                    </div>
-                    <div id="24" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/24" alt="Coming soon">
-                    </div>
-                    <div id="25" class="tile">
-                        <img style="max-width:80%; max-height:95%" src="https://sonnerrs-bot.herokuapp.com/bingoimg/25" alt="Coming soon">
-                    </div>
+    <h1 class="title">Select a team</h1>
+    <div class="scroll">
+        <div class="teams">
+            <!--<span class="crown"><i class='fas fa-crown' aria-hidden='true'></i></span>-->
+            <div class="team" id="team1">Zuk Your Nans</div>
+            <div class="team" id="team2">Team 1 OP</div>
+            <div class="team" id="team3">Stinkers</div>
+            <div class="team" id="team4">Dead Fucking Dead!</div>
+            <div class="team" id="team5">Mut8</div>
+            <div class="team" id="team6">Gulag Gobblers 2.0</div>
+        </div>
+
+        <div class="tiles">
+            <div id="1" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/1" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 1</div>
                 </div>
             </div>
-            <div class="scrollTopLeft"
-                style="background: url(./images/scrollTopLeft.gif) no-repeat;height: 50px;display: block;float: left;width: 155px;z-index: 2;position: relative;">
+            <div id="2" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/2" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 2</div>
+                </div>
             </div>
-            <div class="scrollTopMid"
-                style="background: url(./images/scrollTopMid.gif);height: 50px;display: block;float: left;width: calc(100% - 310px);z-index: 2;position: relative;">
+            <div id="3" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/3" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 3</div>
+                </div>
             </div>
-            <div class="scrollTopRight"
-                style="background: url(./images/scrollTopRight.gif) no-repeat;height: 50px;display: block;float: left;width: 155px;z-index: 2;position: relative;clear: right;">
+            <div id="4" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/4" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 4</div>
+                </div>
             </div>
-            <div style="background: url(./images/scrollMidLeft.gif) repeat-y;height: 100%;display: block;top: -10px;position: relative;z-index: 1;left: 10px;width: 155px;float: left;clear: both;"
-                class="scrollMidLeft"></div>
-            <div style="background: url(./images/scrollMid.gif);height: 100%;display: block;top: -10px;position: relative;z-index: 1;float: left;width: calc(100% - 310px);"
-                class="scrollMid"></div>
-            <div style="background: url(./images/scrollMidRight.gif) repeat-y;height: 100%;display: block;top: -10px;position: relative;z-index: 1; left: -10px; width: 155px;float: left;"
-                class="scrollMidRight"></div>
-            <div class="scrollBotLeft"
-                style="background: url(./images/scrollBotLeft.gif) no-repeat;height: 50px;display: block;float: left;width: 155px;z-index: 2;position: relative;top: -25px;">
+            <div id="5" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/5" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 5</div>
+                </div>
             </div>
-            <div class="scrollBotMid"
-                style="background: url(./images/scrollBotMid.gif);height: 50px;display: block;float: left;width: calc(100% - 310px);z-index: 2;position: relative;top: -25px;">
+            <div id="6" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/6" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 6</div>
+                </div>
             </div>
-            <div class="scrollBotRight"
-                style="background: url(./images/scrollBotRight.gif) no-repeat;height: 50px;display: block;float: left;width: 155px;z-index: 2;position: relative;clear: right;top: -25px;">
+            <div id="7" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/7" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 7</div>
+                </div>
+            </div>
+            <div id="8" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/8" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 8</div>
+                </div>
+            </div>
+            <div id="9" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/9" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 9</div>
+                </div>
+            </div>
+            <div id="10" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/10" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 10</div>
+                </div>
+            </div>
+            <div id="11" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/11" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 11</div>
+                </div>
+            </div>
+            <div id="12" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/12" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 12</div>
+                </div>
+            </div>
+            <div id="13" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/13" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 13</div>
+                </div>
+            </div>
+            <div id="14" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/14" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 14</div>
+                </div>
+            </div>
+            <div id="15" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/15" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 15</div>
+                </div>
+            </div>
+            <div id="16" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/16" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 16</div>
+                </div>
+            </div>
+            <div id="17" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/17" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 17</div>
+                </div>
+            </div>
+            <div id="18" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/18" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 18</div>
+                </div>
+            </div>
+            <div id="19" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/19" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 19</div>
+                </div>
+            </div>
+            <div id="20" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/20" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 20</div>
+                </div>
+            </div>
+            <div id="21" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/21" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 21</div>
+                </div>
+            </div>
+            <div id="22" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/22" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 22</div>
+                </div>
+            </div>
+            <div id="23" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/23" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 23</div>
+                </div>
+            </div>
+            <div id="24" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/24" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 24</div>
+                </div>
+            </div>
+            <div id="25" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/25" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 25</div>
+                </div>
+            </div>
+            <div id="26" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/26" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 26</div>
+                </div>
+            </div>
+            <div id="27" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/27" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 27</div>
+                </div>
+            </div>
+            <div id="28" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/28" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 28</div>
+                </div>
+            </div>
+            <div id="29" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/29" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 29</div>
+                </div>
+            </div>
+            <div id="30" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/30" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 30</div>
+                </div>
+            </div>
+            <div id="31" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/31" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 31</div>
+                </div>
+            </div>
+            <div id="32" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/32" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 32</div>
+                </div>
+            </div>
+            <div id="33" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/33" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 33</div>
+                </div>
+            </div>
+            <div id="34" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/34" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 34</div>
+                </div>
+            </div>
+            <div id="35" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/35" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 35</div>
+                </div>
+            </div>
+            <div id="36" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/36" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 36</div>
+                </div>
+            </div>
+            <div id="37" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/37" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 37</div>
+                </div>
+            </div>
+            <div id="38" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/38" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 38</div>
+                </div>
+            </div>
+            <div id="39" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/39" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 39</div>
+                </div>
+            </div>
+            <div id="40" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/40" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 40</div>
+                </div>
+            </div>
+            <div id="41" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/41" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 41</div>
+                </div>
+            </div>
+            <div id="42" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/42" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 42</div>
+                </div>
+            </div>
+            <div id="43" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/43" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 43</div>
+                </div>
+            </div>
+            <div id="44" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/44" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 44</div>
+                </div>
+            </div>
+            <div id="45" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/45" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 45</div>
+                </div>
+            </div>
+            <div id="46" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/46" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 46</div>
+                </div>
+            </div>
+            <div id="47" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/47" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 47</div>
+                </div>
+            </div>
+            <div id="48" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/48" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 48</div>
+                </div>
+            </div>
+            <div id="49" class="tile">
+                <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/49" alt="Coming soon">
+                <div class="middle">
+                    <div class="text">Tile 49</div>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
