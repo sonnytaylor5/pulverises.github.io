@@ -1,5 +1,26 @@
 var errors;
 $(document).ready(function () {
+    $('#hungergames-submit').click(function(e){
+        var names = [];
+        for (let index = 1; index <= 12; index++) {
+            var name = $('#name' + index).val();  
+            names.push(name);         
+        }
+        $.ajax({
+            type: 'GET',
+            url: 'https://sonnerrs-bot.herokuapp.com/hungergames/' + names.join("&"),
+            processData: false,
+            contentType: false,
+            cache: false
+        })
+            .done(function (data) {
+                var html = "<p>" + data.join('<br>') + "</p>";
+                $('body').html(html);
+                console.log(data);
+            });
+    });
+
+
     var date = new Date();
     if(date.getTime() < 1630886400000){
         $('.pulv-heading-signupclosed').css({"display" : "none"});
