@@ -1,4 +1,28 @@
 var errors;
+// Next/previous controls
+var slideIndex = 1;
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+          
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex-1].style.display = "block";  
+} 
+
 $(document).ready(function () {
     $('#hungergames-submit').click(function(e){
         var names = [];
@@ -15,11 +39,33 @@ $(document).ready(function () {
         })
             .done(function (data) {
                 var html = "<p>" + data.join('<br>') + "</p>";
-                $('body').html(html);
-                console.log(data);
+                var arr = [];
+                var htmlString = "";
+                for(var i = 0 ; i < data.length; i++){
+                    if(data[i].startsWith("<br>") && htmlString != ""){
+                        arr.push(`<div class="mySlides fade">
+                        <div class="text">${htmlString}</div>
+                      </div>`);
+                        htmlString = "";
+                    }
+                    htmlString += data[i] + "<br>";
+                }
+                arr.push(`<div class="mySlides fade">
+                        <div class="text">${htmlString}</div>
+                      </div>`);
+                console.log(arr);
+                 var htmlel = `<div class="slideshow-container">`;
+                 for(var i = 0; i < arr.length; i++){
+                     htmlel += arr[i];
+                 }
+                 htmlel += `<a class="prev" onclick="plusSlides(-1)"><-</a> <a class="next" onclick="plusSlides(1)">-></a> </div>`;
+
+                $('body').html(htmlel);
+                
+var slideIndex = 1;
+showSlides(slideIndex);
             });
     });
-
 
     var date = new Date();
     if(date.getTime() < 1630886400000){
