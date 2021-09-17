@@ -17,6 +17,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulverises Bingo</title>
+    <style>
+        #nov {
+            position: absolute;
+            bottom: -4%;
+            left: -15%;
+            z-index: 10;
+            -webkit-animation: spin 4s infinite linear;
+        }
+
+        @-moz-keyframes spin {
+            from { -moz-transform: rotate(0deg); }
+            to { -moz-transform: rotate(360deg); }
+        }
+        @-webkit-keyframes spin {
+            from { -webkit-transform: rotate(0deg); }
+            to { -webkit-transform: rotate(360deg); }
+        }
+        @keyframes spin {
+            from {transform:rotate(0deg);}
+            to {transform:rotate(360deg);}
+        }
+    </style>
+    <script>
+function novIsDetected() {
+    setTimeout(function () {
+        $("#nov")
+            .animate({ left: "100%", bottom: "100%" }, 10000)
+    });
+}
+    </script>
 </head>
 
 <body>
@@ -29,9 +59,9 @@
             <div class="team" id="team3">Stinkers</div>
             <div class="team" id="team4">Dead Fucking Dead!</div>
             <div class="team" id="team5">Mut8</div>
-            <div class="team" id="team6">Gulag Gobblers 2.0</div>
+            <div class="team" id="team6" onclick="novIsDetected()">Gulag Gobblers 2.0</div>
         </div>
-
+        <div id="nov"><img src="./images/gulag.png"></div>
         <div class="tiles">
             <div id="1" class="tile">
                 <img src="https://sonnerrs-bot.herokuapp.com/bingoimg/1" alt="Coming soon">
