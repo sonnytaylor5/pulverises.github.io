@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+:root {
+    --bs-yellow-osrs: #FDF200;
+    --bs-purple-pulv : #563D7C;
+}
+
+body{
+    background-color: #18181b;
+    color: var(--bs-yellow-osrs);
+}
+
+.text-yellow-osrs {
+    color: var(--bs-yellow-osrs);
+}
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav{
+    opacity: 0.9;
+}
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .nav-link.active:hover{
+    filter: brightness(1.0) !important;
+}
+
+.text-yellow-osrs-hover:hover{
+    filter: brightness(0.75) !important;
+}
+  
+.text-purple-pulv {
+    color:var(--bs-purple-pulv);
+}
+
+.bg-primary{
+    background-color: var(--bs-purple-pulv) !important;
+}
+
+.social-icons .social-icon:hover{
+    background-color: var(--bs-purple-pulv) !important;
+    color: #FDF200;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    color: var(--bs-yellow-osrs);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover{
+    filter: brightness(0.75) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link .active:hover{
+    filter: brightness(1) !important;
+}
+.social-icons .social-icon{
+    background-color: var(--bs-yellow-osrs);
+    color: #18181b;
+}
+
+#fileinput{
+    color: #fff;
+}
+
+input[type=file]::file-selector-button {
+    background-color: #FDF200;
+    box-shadow: 0 2px 0 #002d18;
+    padding: .2em .4em;
+    font-family: arial, sans-serif;
+    margin: 0 10px 0 0;
+    margin-bottom: 22px;
+    padding: 8px 10px 7px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.1875;
+}
+  
+  input[type=file]::file-selector-button:hover {
+    background-color: #563D7C;
+    color: #FDF200;
+    cursor: pointer;
+  }

@@ -1,5 +1,5 @@
 .pulv-heading-xl {
-    color: #fff;
+    color: var(--bs-yellow-osrs);
     text-decoration: underline;
     font-family: arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -26,7 +26,7 @@
 }
 
 .pulv-heading-m {
-    color: #fff;
+    color: var(--bs-yellow-osrs);
     font-family: arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -99,8 +99,8 @@
     padding: 8px 10px 7px;
     border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 0;
-    color: #fff;
-    background-color: #00703c;
+    color: #18181b;
+    background-color: #FDF200;
     box-shadow: 0 2px 0 #002d18;
     text-align: center;
     vertical-align: top;
@@ -126,7 +126,8 @@
     text-decoration: none
 }
 .pulv-button:hover {
-    background-color: #005a30
+    background-color: #563D7C;
+    color: #FDF200;
 }
 
 .pulv-button:active {
@@ -192,7 +193,7 @@
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
-    color: #fff;
+    color: var(--bs-yellow-osrs);
     box-sizing: border-box;
     display: table;
     max-width: 100%;
@@ -240,7 +241,7 @@
     line-height: 1.25;
     display: block;
     margin-bottom: 15px;
-    color: #fff
+    color: var(--bs-yellow-osrs);
 }
 
 @media (min-width: 40.0625em) {
@@ -262,7 +263,7 @@
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.25;
-    color: #fff;
+    color: var(--bs-yellow-osrs);
     display: block;
     margin-bottom: 5px
 }
@@ -387,7 +388,8 @@
     height: 40px;
     border: 2px solid;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0)
+    background: rgba(0, 0, 0, 0);
+    color: #fff
 }
 
 .pulv-radios__label:after {
@@ -468,4 +470,11 @@
     -webkit-clip-path: inset(50%)!important;
     clip-path: inset(50%)!important;
     white-space: nowrap!important
+}
+
+.pulv-hint::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f05a";
+    color: #fff;
 }

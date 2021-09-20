@@ -114,3 +114,10 @@ $(document).ready(function(){
     });
     
 });
+
+function novIsDetected() {
+    setTimeout(function () {
+        $("#nov")
+            .animate({ left: "100%", bottom: "100%" }, 10000)
+    });
+}

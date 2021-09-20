@@ -43,14 +43,14 @@ $(document).ready(function () {
                 var htmlString = "";
                 for(var i = 0 ; i < data.length; i++){
                     if(data[i].startsWith("<br>") && htmlString != ""){
-                        arr.push(`<div class="mySlides fade">
+                        arr.push(`<div class="mySlides">
                         <div class="text">${htmlString}</div>
                       </div>`);
                         htmlString = "";
                     }
                     htmlString += data[i] + "<br>";
                 }
-                arr.push(`<div class="mySlides fade">
+                arr.push(`<div class="mySlides">
                         <div class="text">${htmlString}</div>
                       </div>`);
                 console.log(arr);
@@ -60,7 +60,7 @@ $(document).ready(function () {
                  }
                  htmlel += `<a class="prev" onclick="plusSlides(-1)"><-</a> <a class="next" onclick="plusSlides(1)">-></a> </div>`;
 
-                $('body').html(htmlel);
+                $('#hungergamessection').html(htmlel);
                 
 var slideIndex = 1;
 showSlides(slideIndex);
