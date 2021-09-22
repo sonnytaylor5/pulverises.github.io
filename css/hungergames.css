@@ -4,9 +4,8 @@
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
   position: relative;
-  margin: auto;
+  width: 100%;
 }
 
 /* Hide the images by default */
@@ -96,4 +95,23 @@
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+.hgTitle {
+  text-decoration: underline;
+  font-weight: bold;
+  color: var(--bs-yellow-osrs);
+  font-size: 2rem;
+}
+
+.text li:first-child {
+  list-style: none;
+}
+
+.text li {
+  margin-bottom: 1rem;
+}
+
+.text li:first-child {
+  margin-bottom: 2rem;
 }

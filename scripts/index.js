@@ -3,11 +3,37 @@ var errors;
 var slideIndex = 1;
 function plusSlides(n) {
   showSlides(slideIndex += n);
+    if($('.mySlides').first()[0].style.display == "block"){
+        $('.prev').css({"display" : "none"});
+    }
+    if($('.mySlides').first()[0].style.display == "none"){
+        $('.prev').css({"display" : "block"});
+    }
+
+    if($('.mySlides').last()[0].style.display == "block"){
+        $('.next').css({"display" : "none"});
+    }
+    if($('.mySlides').last()[0].style.display == "none"){
+        $('.next').css({"display" : "block"});
+    }
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
   showSlides(slideIndex = n);
+    if($('.mySlides').first()[0].style.display == "block"){
+        $('.prev').css({"display" : "none"});
+    }
+    if($('.mySlides').first()[0].style.display == "none"){
+        $('.prev').css({"display" : "block"});
+    }
+
+    if($('.mySlides').last()[0].style.display == "block"){
+        $('.next').css({"display" : "none"});
+    }
+    if($('.mySlides').last()[0].style.display == "none"){
+        $('.next').css({"display" : "block"});
+    }
 }
 
           
@@ -44,26 +70,28 @@ $(document).ready(function () {
                 for(var i = 0 ; i < data.length; i++){
                     if(data[i].startsWith("<br>") && htmlString != ""){
                         arr.push(`<div class="mySlides">
-                        <div class="text">${htmlString}</div>
+                        <div class="text"><ul>${htmlString}</ul></div>
                       </div>`);
                         htmlString = "";
                     }
-                    htmlString += data[i] + "<br>";
+                    if(data[i]){
+                        htmlString += "<li>" + data[i] + "</li>";
+                    }
                 }
                 arr.push(`<div class="mySlides">
-                        <div class="text">${htmlString}</div>
+                        <div class="text"><ul>${htmlString}</ul><br><button class="pulv-button" type="button" onclick="window.location.reload()">Play again</button></div>
                       </div>`);
                 console.log(arr);
                  var htmlel = `<div class="slideshow-container">`;
                  for(var i = 0; i < arr.length; i++){
                      htmlel += arr[i];
                  }
-                 htmlel += `<a class="prev" onclick="plusSlides(-1)"><-</a> <a class="next" onclick="plusSlides(1)">-></a> </div>`;
+                 htmlel += `<a class="prev" style="display:none" onclick="plusSlides(-1)"><-</a> <a class="next" onclick="plusSlides(1)">-></a> </div>`;
 
                 $('#hungergamessection').html(htmlel);
                 
-var slideIndex = 1;
-showSlides(slideIndex);
+                var slideIndex = 1;
+                showSlides(slideIndex);
             });
     });
 
