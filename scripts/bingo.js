@@ -2,7 +2,7 @@ var res;
 var activeTeam;
 var socket;
 
-var pointArr = [0, 30, 35, 50, 50, 50, 60, 75, 75, 75, 75, 75, 85, 85, 85, 85, 85, 100, 100, 100, 100, 100, 100, 100, 100, 125, 125, 125, 150, 150, 150, 150, 150, 150, 150, 175, 175, 175, 175, 200, 200, 200, 200, 200, 250, 250, 250, 250, 250, 250];
+var pointArr = [0, 50,50,50,50, 75,75,75,75,75,75,75, 100,100,100,100,100,100,100,100,100, 125,125, 150,150,150,150,150,150,150,150,150,150, 175,175,175,175,175, 200,200,200,200,200 ,250,250,250,250,250,250,250];
 
 function addBorders(teamNumber){  
     activeTeam = teamNumber;
@@ -43,7 +43,7 @@ $(document).ready(function(){
 
         $('.counter').remove();
         for(var i = 0; i < res.teams.length; i++){
-            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/6500</span>");
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7000</span>");
         }
     });
     $.ajax({url: "https://sonnerrs-bot.herokuapp.com/team/", success: function(result){
@@ -58,7 +58,7 @@ $(document).ready(function(){
         }
 
         for(var i = 0; i < res.teams.length; i++){
-            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/6500</span>");
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7000</span>");
         }
         
       },error:function(result){
@@ -116,8 +116,19 @@ $(document).ready(function(){
 });
 
 function novIsDetected() {
+    $('#nov').css({"display" : "block"});
     setTimeout(function () {
-        $("#nov")
-            .animate({ left: "100%", bottom: "100%" }, 10000)
+        $("#nov").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#nov').css({"display" : "none"})
+        })
+    });
+}
+
+function pulvIsDetected() {
+    $('#pulv').css({"display" : "block"});
+    setTimeout(function () {
+        $("#pulv").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#pulv').css({"display" : "none"})
+        })
     });
 }
