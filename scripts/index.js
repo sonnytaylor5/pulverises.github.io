@@ -49,10 +49,28 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "block";  
 } 
 
+var hgLength = 12;
+
 $(document).ready(function () {
+    $('#hungergames-add').click(function(e){
+        hgLength += 1;
+        $('.pulv-input').last().after(`<input class="pulv-input" id="name${hgLength}" name="name${hgLength}" type="text" autocomplete="off" aria-describedby="name-hint">`);
+    });
+
+    $('#hungergames-del').click(function(e){
+        if(hgLength > 5){
+            hgLength -= 1;
+            $('.pulv-input').last().remove();
+        }else{
+            var audio = document.getElementById("audio");
+            audio.play();
+        }
+    });
+
+
     $('#hungergames-submit').click(function(e){
         var names = [];
-        for (let index = 1; index <= 12; index++) {
+        for (let index = 1; index <= hgLength; index++) {
             var name = $('#name' + index).val();  
             names.push(name);         
         }
