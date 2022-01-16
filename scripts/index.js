@@ -113,6 +113,7 @@ $(document).ready(function () {
             });
     });
 
+
     var date = new Date();
     if(date.getTime() < 1630886400000){
         $('.pulv-heading-signupclosed').css({"display" : "none"});
@@ -167,16 +168,102 @@ $(document).ready(function () {
         document.getElementById("container").src = "";
     });
 
-
-    window.setInterval(function () {
-        $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
-            $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
-                $('.sidebar__btncontainer').animate({ "left": "-=38px" }, 1000, function () {
-                    $('.sidebar__btncontainer').css("left", "6px");
-                });
-            });
+    $('#form__deletecode').submit(function (e) {
+        e.preventDefault();
+        var data = new FormData($('#form__deletecode')[0]);
+        $.ajax({
+            type: 'POST',
+            url: 'https://sonnerrs-bot.herokuapp.com/deleteentry/',
+            enctype: 'multipart/form-data',
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false
+        })
+        .done(function (data) {
+            console.log(data);
+            if (data.success) {
+                $('#form__deletecode')[0].reset();
+                alert("Application deleted.");
+            }
         });
-    }, 3000);
+    });
+
+    function exportToCsv(filename, rows) {
+        var processRow = function (row) {
+            var finalVal = '';
+            for (var j = 0; j < row.length; j++) {
+                var innerValue = row[j] === null ? '' : row[j].toString();
+                if (row[j] instanceof Date) {
+                    innerValue = row[j].toLocaleString();
+                };
+                var result = innerValue.replace(/"/g, '""');
+                if (result.search(/("|,|\n)/g) >= 0)
+                    result = '"' + result + '"';
+                if (j > 0)
+                    finalVal += ',';
+                finalVal += result;
+            }
+            return finalVal + '\n';
+        };
+    
+        var csvFile = '';
+        for (var i = 0; i < rows.length; i++) {
+            csvFile += processRow(rows[i]);
+        }
+    
+        var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
+        if (navigator.msSaveBlob) { // IE 10+
+            navigator.msSaveBlob(blob, filename);
+        } else {
+            var link = document.createElement("a");
+            if (link.download !== undefined) { // feature detection
+                // Browsers that support HTML5 download attribute
+                var url = URL.createObjectURL(blob);
+                link.setAttribute("href", url);
+                link.setAttribute("download", filename);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        }
+    }
+
+    var csvData;
+    $('#getdata-generatecsv').click(function(){
+       console.log(csvData);
+       var csv = [];
+        var titles = ["Username", "Discord Name", "Paid", "Account type", "Paired with", "Combat level", "PvM Experience", "Bank value", "Hours they can play", "Attack", "Hitpoints", "Mining", "Strength", "Agility", "Smithing", "Defence", "Herblore", "Fishing", "Ranged", "Thieving", "Cooking", "Prayer", "Crafting", "Firemaking", "Magic", "Fletching", "Woodcutting", "Runecraft", "Slayer", "Farming", "Construction", "Hunter"]
+        csv.push(titles);
+        for(var i = 0; i < csvData.values.length; i++){
+            var item = csvData.values[i];
+            csv.push([item.username, item.discordname, item.paid, item.accountType, item.pairedWith, item.combatLevel, item.pvmexp, item.bankval, item.hoursplayed, item.attack, item.hitpoints, item.mining, item.strength, item.agility, item.smithing, item.defence, item.herblore, item.fishing, item.ranged, item.thieving, item.cooking, item.prayer, item.crafting, item.firemaking, item.magic, item.fletching, item.woodcutting, item.runecraft, item.slayer, item.farming, item.construction, item.hunter]);
+        }
+       exportToCsv('applicants.csv', csv);
+    });
+
+    $('#form__getdata').submit(function (e) {
+        e.preventDefault();
+        var data = new FormData($('#form__getdata')[0]);
+        $.ajax({
+            type: 'POST',
+            url: 'https://sonnerrs-bot.herokuapp.com/downloadcsv/',
+            enctype: 'multipart/form-data',
+            data: data,
+            processData: false,
+            contentType: false,
+            cache: false
+        })
+        .done(function (data) {
+            if (data.success) {
+                csvData = data;
+                $('#getdata-generatecsv').css({"display" : "block"});
+                $('#form__getdata')[0].reset();
+            }
+        });
+    });
+
 
     $('#form__idea').submit(function (e) {
         e.preventDefault();
@@ -300,7 +387,9 @@ $(document).ready(function () {
     const fileInput = document.getElementById("fileinput");
 
     window.addEventListener('paste', e => {
-        fileInput.files = e.clipboardData.files;
+        if(fileInput){
+            fileInput.files = e.clipboardData.files;
+        }
     });
 
     document.onpaste = function (pasteEvent) {
