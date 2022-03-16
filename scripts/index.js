@@ -213,12 +213,11 @@ $(document).ready(function () {
         }
     
         var blob = new Blob([csvFile], { type: 'text/csv;charset=utf-8;' });
-        if (navigator.msSaveBlob) { // IE 10+
+        if (navigator.msSaveBlob) {
             navigator.msSaveBlob(blob, filename);
         } else {
             var link = document.createElement("a");
-            if (link.download !== undefined) { // feature detection
-                // Browsers that support HTML5 download attribute
+            if (link.download !== undefined) {
                 var url = URL.createObjectURL(blob);
                 link.setAttribute("href", url);
                 link.setAttribute("download", filename);
@@ -393,7 +392,6 @@ $(document).ready(function () {
     });
 
     document.onpaste = function (pasteEvent) {
-        // consider the first item (can be easily extended for multiple items)
         var item = pasteEvent.clipboardData.items[0];
 
         if (item.type.indexOf("image") === 0) {

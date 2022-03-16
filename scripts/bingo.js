@@ -2,9 +2,10 @@ var res;
 var activeTeam;
 var socket;
 
-var pointArr = [0, 50,50,50,50, 75,75,75,75,75,75,75, 100,100,100,100,100,100,100,100,100, 125,125, 150,150,150,150,150,150,150,150,150,150, 175,175,175,175,175, 200,200,200,200,200 ,250,250,250,250,250,250,250];
+var pointArr = [0, 150,150,150,150,150, 150,150,200,100,100, 175,175,100,25,250 ,100,125,150,175,125 ,150,150,50,225,200, 250,250,200,250,175, 175,200,125,250,175, 25,150,225,200,125,  175,150,100,125,225, 100,50,75,100];
+var total = pointArr.reduce((partialSum, a) => partialSum + a, 0);
 
-function addBorders(teamNumber){  
+function addBorders(teamNumber){ 
     activeTeam = teamNumber;
     $('.tile').removeClass("achieved");
     $('.team').removeClass("active");
@@ -43,7 +44,7 @@ $(document).ready(function(){
 
         $('.counter').remove();
         for(var i = 0; i < res.teams.length; i++){
-            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7000</span>");
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7500</span>");
         }
     });
     $.ajax({url: "https://sonnerrs-bot.herokuapp.com/team/", success: function(result){
@@ -58,7 +59,7 @@ $(document).ready(function(){
         }
 
         for(var i = 0; i < res.teams.length; i++){
-            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7000</span>");
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7500</span>");
         }
         
       },error:function(result){
@@ -113,6 +114,110 @@ $(document).ready(function(){
         $("#team9").addClass("active");
     });
     
+    $('#team10').click(function(){
+        addBorders(10);
+        $("#team10").addClass("active");
+    });
+
+    $('#team11').click(function(){
+        addBorders(11);
+        $("#team11").addClass("active");
+    });
+
+    $('#team12').click(function(){
+        addBorders(12);
+        $("#team12").addClass("active");
+    });
+
+    $('#team13').click(function(){
+        addBorders(13);
+        $("#team13").addClass("active");
+    });
+
+    $('#team14').click(function(){
+        addBorders(14);
+        $("#team14").addClass("active");
+    });
+
+    $('#team15').click(function(){
+        addBorders(15);
+        $("#team15").addClass("active");
+    });
+
+    $('#team16').click(function(){
+        addBorders(16);
+        $("#team16").addClass("active");
+    });
+
+    $('#team17').click(function(){
+        addBorders(17);
+        $("#team17").addClass("active");
+    });
+
+    $('#team18').click(function(){
+        addBorders(18);
+        $("#team18").addClass("active");
+    });
+
+    $('#team19').click(function(){
+        addBorders(19);
+        $("#team19").addClass("active");
+    });
+    
+    $('#team20').click(function(){
+        addBorders(20);
+        $("#team20").addClass("active");
+    });
+
+    $('#team21').click(function(){
+        addBorders(21);
+        $("#team21").addClass("active");
+    });
+
+    $('#team22').click(function(){
+        addBorders(22);
+        $("#team22").addClass("active");
+    });
+
+    $('#team23').click(function(){
+        addBorders(23);
+        $("#team23").addClass("active");
+    });
+
+    $('#team24').click(function(){
+        addBorders(24);
+        $("#team24").addClass("active");
+    });
+
+    $('#team25').click(function(){
+        addBorders(25);
+        $("#team25").addClass("active");
+    });
+
+    $('#team26').click(function(){
+        addBorders(26);
+        $("#team26").addClass("active");
+    });
+
+    $('#team27').click(function(){
+        addBorders(27);
+        $("#team27").addClass("active");
+    });
+
+    $('#team28').click(function(){
+        addBorders(28);
+        $("#team28").addClass("active");
+    });
+
+    $('#team29').click(function(){
+        addBorders(29);
+        $("#team29").addClass("active");
+    });
+    
+    $('#team30').click(function(){
+        addBorders(30);
+        $("#team30").addClass("active");
+    });
 });
 
 function novIsDetected() {

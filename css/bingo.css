@@ -56,7 +56,7 @@
 }
 
 .team:not(.active) {
-    opacity: 0.5;
+    opacity: 0.25;
 }
 
 .team:hover {
@@ -68,7 +68,7 @@
 }
 
 .tile:not(.achieved) img {
-    opacity: 0.5;
+    opacity: 0.25;
 }
 
 .tiles {
@@ -76,8 +76,8 @@
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     grid-column-gap: 2px;
     grid-row-gap: 10px;
 }
@@ -86,7 +86,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
 }
 
 @media screen and (max-width: 1530px) {
@@ -109,11 +108,30 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
     .teams {
         max-width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 2px;
+    }
+
+    .tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(25, 1fr);
+        grid-column-gap: 2px;
+        grid-row-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .teams {
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         grid-column-gap: 2px;
         grid-row-gap: 2px;
