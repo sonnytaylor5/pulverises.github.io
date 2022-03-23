@@ -32,6 +32,7 @@ $(document).ready(function(){
         if(activeTeam == socketRes.teamNumber){
             addBorders(socketRes.teamNumber);
         }
+        $('#team' + activeTeam).addClass("active");
 
         for(var i = 0; i < res.teams.length; i++){
             var points = 0;
