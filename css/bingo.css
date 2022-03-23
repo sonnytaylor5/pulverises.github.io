@@ -146,14 +146,6 @@
     }
 }
 
-#nov {
-    position: absolute;
-    bottom: -4%;
-    left: -15%;
-    z-index: 10;
-    -webkit-animation: spin 4s infinite linear;
-}
-
 @-moz-keyframes spin {
     from { -moz-transform: rotate(0deg); }
     to { -moz-transform: rotate(360deg); }
@@ -167,9 +159,36 @@
     to {transform:rotate(360deg);}
 }
 
+#nov {
+    position: absolute;
+    bottom: -4%;
+    left: -15%;
+    z-index: 10;
+    -webkit-animation: spin 4s infinite linear;
+}
 
+#mutant {
+    position: absolute;
+    bottom: -4%;
+    left: -15%;
+    z-index: 10;;
+}
+
+#sarachnis {
+    position: absolute;
+    bottom: -25%;
+    left: -40%;
+    z-index: 10;;
+}
 
 #pulv {
+    position: absolute;
+    bottom: -4%;
+    left: -15%;
+    z-index: 10;
+    -webkit-animation: spin 4s infinite linear;
+}
+#berg {
     position: absolute;
     bottom: -4%;
     left: -15%;

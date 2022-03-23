@@ -221,7 +221,17 @@ $(document).ready(function(){
     });
 });
 
+var novSet = false;
+var pulvSet = false;
+var mutantSet = false;
+var sarachnisSet = false;
+var bergSet = false;
+
 function novIsDetected() {
+    if(novSet){
+        return;
+    }
+    novSet = true;
     $('#nov').css({"display" : "block"});
     setTimeout(function () {
         $("#nov").animate({ left: "100%", bottom: "100%" }, 10000, function(){
@@ -231,10 +241,53 @@ function novIsDetected() {
 }
 
 function pulvIsDetected() {
+    if(pulvSet){
+        return;
+    }
+    pulvSet = true;
     $('#pulv').css({"display" : "block"});
     setTimeout(function () {
         $("#pulv").animate({ left: "100%", bottom: "100%" }, 10000, function(){
             $('#pulv').css({"display" : "none"})
+        })
+    });
+}
+
+function mutantIsDetected() {
+    if(mutantSet){
+        return;
+    }
+    mutantSet = true;
+    $('#mutant').css({"display" : "block"});
+    setTimeout(function () {
+        $("#mutant").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#mutant').css({"display" : "none"})
+        })
+    });
+}
+
+function sarachnisIsDetected() {
+    if(sarachnisSet){
+        return;
+    }
+    sarachnisSet = true;
+    $('#sarachnis').css({"display" : "block"});
+    setTimeout(function () {
+        $("#sarachnis").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#sarachnis').css({"display" : "none"})
+        })
+    });
+}
+
+function bergIsDetected() {
+    if(bergSet){
+        return;
+    }
+    bergSet = true;
+    $('#berg').css({"display" : "block"});
+    setTimeout(function () {
+        $("#berg").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#berg').css({"display" : "none"})
         })
     });
 }
