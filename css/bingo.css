@@ -188,6 +188,15 @@
     z-index: 10;
     -webkit-animation: spin 4s infinite linear;
 }
+
+#stryhns {
+    position: absolute;
+    bottom: -4%;
+    left: -15%;
+    z-index: 10;
+    -webkit-animation: spin 4s infinite linear;
+}
+
 #berg {
     position: absolute;
     bottom: -4%;

@@ -226,6 +226,7 @@ var pulvSet = false;
 var mutantSet = false;
 var sarachnisSet = false;
 var bergSet = false;
+var stryhnsSet = false;
 
 function novIsDetected() {
     if(novSet){
@@ -288,6 +289,19 @@ function bergIsDetected() {
     setTimeout(function () {
         $("#berg").animate({ left: "100%", bottom: "100%" }, 10000, function(){
             $('#berg').css({"display" : "none"})
+        })
+    });
+}
+
+function stryhnsIsDetected() {
+    if(stryhnsSet){
+        return;
+    }
+    stryhnsSet = true;
+    $('#stryhns').css({"display" : "block"});
+    setTimeout(function () {
+        $("#stryhns").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#stryhns').css({"display" : "none"})
         })
     });
 }
