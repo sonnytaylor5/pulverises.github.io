@@ -178,7 +178,7 @@
     position: absolute;
     bottom: -25%;
     left: -40%;
-    z-index: 10;;
+    z-index: 10;
 }
 
 #pulv {
@@ -203,4 +203,11 @@
     left: -15%;
     z-index: 10;
     -webkit-animation: spin 4s infinite linear;
+}
+
+#slepewithnan {
+    position: absolute;
+    bottom: -25%;
+    left: -40%;
+    z-index: 10;
 }

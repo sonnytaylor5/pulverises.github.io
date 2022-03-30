@@ -227,6 +227,7 @@ var mutantSet = false;
 var sarachnisSet = false;
 var bergSet = false;
 var stryhnsSet = false;
+var slepewithnanSet = false;
 
 function novIsDetected() {
     if(novSet){
@@ -302,6 +303,19 @@ function stryhnsIsDetected() {
     setTimeout(function () {
         $("#stryhns").animate({ left: "100%", bottom: "100%" }, 10000, function(){
             $('#stryhns').css({"display" : "none"})
+        })
+    });
+}
+
+function slepewithnanIsDetected() {
+    if(slepewithnanSet){
+        return;
+    }
+    slepewithnanSet = true;
+    $('#slepewithnan').css({"display" : "block"});
+    setTimeout(function () {
+        $("#slepewithnan").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#slepewithnan').css({"display" : "none"})
         })
     });
 }
