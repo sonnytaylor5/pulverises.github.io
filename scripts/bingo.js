@@ -228,6 +228,7 @@ var sarachnisSet = false;
 var bergSet = false;
 var stryhnsSet = false;
 var slepewithnanSet = false;
+var flompleSet = false;
 
 function novIsDetected() {
     if(novSet){
@@ -238,6 +239,19 @@ function novIsDetected() {
     setTimeout(function () {
         $("#nov").animate({ left: "100%", bottom: "100%" }, 10000, function(){
             $('#nov').css({"display" : "none"})
+        })
+    });
+}
+
+function flompleIsDetected() {
+    if(flompleSet){
+        return;
+    }
+    flompleSet = true;
+    $('#flomple').css({"display" : "block"});
+    setTimeout(function () {
+        $("#flomple").animate({ left: "100%", bottom: "100%" }, 10000, function(){
+            $('#flomple').css({"display" : "none"})
         })
     });
 }

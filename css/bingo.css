@@ -205,6 +205,15 @@
     -webkit-animation: spin 4s infinite linear;
 }
 
+
+#flomple {
+    position: absolute;
+    bottom: -4%;
+    left: -15%;
+    z-index: 10;
+    -webkit-animation: spin 4s infinite linear;
+}
+
 #slepewithnan {
     position: absolute;
     bottom: -25%;
