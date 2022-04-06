@@ -21,6 +21,7 @@ $(document).ready(function(){
     socket = io("https://sonnerrs-bot.herokuapp.com");
 
     socket.on('update', function(socketRes){
+        $('#myModal').css({ "display": "none" });
         console.log(socketRes);
         //update global store
         for(var i = 0; i < res.teams.length; i++){
