@@ -1119,7 +1119,8 @@
                     res.teams[0].pos = currentPos;
                     for (let i = 1; i < res.teams.length; i++) {
                         if (res.teams[i].points == res.teams[i - 1].points) {
-                            res.teams[i].pos = currentPos;
+                            res.teams[i].pos = res.teams[i-1].pos;
+                            currentPos++;
                         } else {
                             currentPos++;
                             res.teams[i].pos = currentPos;
