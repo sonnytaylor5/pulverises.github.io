@@ -529,59 +529,63 @@
         }
 
         .topnav {
-                overflow: hidden;
-            }
+            overflow: hidden;
+        }
 
+        .topnav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .topnav a.active {
+            color: #922A92;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 800px) {
             .topnav a {
-                float: left;
-                display: block;
-                color: #fff;
-                text-align: center;
-                padding: 10px;
-                text-decoration: none;
-                font-size: 24px;
-            }
-
-            .topnav a.active {
-                color: #922A92;
-            }
-
-            .topnav .icon {
                 display: none;
             }
 
-            @media screen and (max-width: 800px) {
-                .topnav a {
-                    display: none;
-                }
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
 
-                .topnav a.icon {
-                    float: right;
-                    display: block;
-                }
+        @media screen and (max-width: 800px) {
+            .topnav.responsive {
+                position: relative;
             }
 
-            @media screen and (max-width: 800px) {
-                .topnav.responsive {
-                    position: relative;
-                }
-
-                .topnav.responsive .icon {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                }
-
-                .topnav.responsive a {
-                    float: none;
-                    display: block;
-                    text-align: left;
-                }
-
-                .topnav.responsive a:first-child {
-                    margin-top: 40px;
-                }
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
             }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .topnav.responsive a:first-child {
+                margin-top: 40px;
+            }
+        }
+
+        .team:hover {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
+        }
     </style>
 </head>
 
@@ -1173,6 +1177,11 @@
                         $(".teams").append(`
                             <div class="team" id="team${res.teams[i].teamNumber}" teampos="${res.teams[i].pos}" teamid="${res.teams[i].teamNumber}" teamname="${teams.filter(obj => { return obj.teamNumber == res.teams[i].teamNumber })[0].name}">
                                 <img class="team__image" src="${teams.filter(obj => { return obj.teamNumber == res.teams[i].teamNumber })[0].img}">
+                                <div class="medal__circle medal__circle--right medal__circle--white">
+                                    <p class="thirdplace__icon">
+                                        ${ordinal_suffix_of(res.teams[i].pos)}
+                                    </p>
+                                </div>
                                 <div class="team__name">
                                     ${teams.filter(obj => { return obj.teamNumber == res.teams[i].teamNumber })[0].name}
                                 </div>
@@ -1252,6 +1261,7 @@
                 }
             });
         });
+
         function compare(a, b) {
             if (a.points < b.points) {
                 return 1;
