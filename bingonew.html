@@ -216,7 +216,7 @@
         .medal__circle--silver {
             background: silver;
         }
-    
+
         .medal__circle--bronze {
             background: #cd7f32;
         }
@@ -262,7 +262,7 @@
             position: absolute;
         }
 
-        .medal__circle--white{
+        .medal__circle--white {
             background: #fff;
         }
 
@@ -449,65 +449,74 @@
             margin-right: auto;
         }
 
-        @media screen and (max-width: 1530px) {
-            .tiles {
-                max-width: 100%;
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(13, 1fr);
-                grid-column-gap: 2px;
-                grid-row-gap: 10px;
-            }
-
-            .teams {
-                max-width: 100%;
-                display: grid;
-                grid-template-columns: repeat(6, 1fr);
-                grid-template-rows: repeat(1, 1fr);
-                grid-column-gap: 2px;
-                grid-row-gap: 10px;
-            }
-        }
-
         @media screen and (max-width: 1200px) {
-            .teams {
-                max-width: 100%;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                grid-column-gap: 2px;
-                grid-row-gap: 2px;
-            }
-
-            .tiles {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(25, 1fr);
-                grid-column-gap: 2px;
-                grid-row-gap: 10px;
+            body {
+                margin: 5%;
             }
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
             .teams {
-                max-width: 100%;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(2, 1fr);
-                grid-column-gap: 2px;
-                grid-row-gap: 2px;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "firstplace"
+                    "secondplace"
+                    "thirdplace"
+                    "."
             }
 
+            .tiles {}
+        }
+
+        @media screen and (max-width: 1660px) {
             .tiles {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(25, 1fr);
-                grid-column-gap: 2px;
-                grid-row-gap: 10px;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(6, 1fr);
             }
         }
 
-                
+        @media screen and (max-width: 1425px) {
+            .tiles {
+                grid-template-columns: repeat(5, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 1185px) {
+            .tiles {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 950px) {
+            .tiles {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 710px) {
+            .tiles {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+
+            .navbar {
+                width: 50%;
+                float: right;
+            }
+        }
+
+
+        @media screen and (max-width: 470px) {
+            .tiles {
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+            }
+        }
+
         .text {
             background-color: #18181b;
             color: yellow;
@@ -515,9 +524,64 @@
             padding: 16px 32px;
         }
 
-        .counter{
+        .counter {
             display: none;
         }
+
+        .topnav {
+                overflow: hidden;
+            }
+
+            .topnav a {
+                float: left;
+                display: block;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 24px;
+            }
+
+            .topnav a.active {
+                color: #922A92;
+            }
+
+            .topnav .icon {
+                display: none;
+            }
+
+            @media screen and (max-width: 800px) {
+                .topnav a {
+                    display: none;
+                }
+
+                .topnav a.icon {
+                    float: right;
+                    display: block;
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                .topnav.responsive {
+                    position: relative;
+                }
+
+                .topnav.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+
+                .topnav.responsive a {
+                    float: none;
+                    display: block;
+                    text-align: left;
+                }
+
+                .topnav.responsive a:first-child {
+                    margin-top: 40px;
+                }
+            }
     </style>
 </head>
 
@@ -849,13 +913,15 @@
             </a>
         </header>
         <nav>
-            <div class="navbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="/bingosignup">Bingo sign up</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/bingo">Bingo standings</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/submitidea">Hide and seek</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/hungergames">Hunger games</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/raidsignup">Raids sign up</a></li>
+            <div class="topnav" id="myTopnav">
+                <a class="nav-link" href="/bingosignup">Bingo sign up</a>
+                <a class="nav-link active" href="/bingo">Bingo standings</a>
+                <a class="nav-link" href="/submitidea">Hide and seek</a>
+                <a class="nav-link" href="/hungergames">Hunger games</a>
+                <a class="nav-link" href="/raidsignup">Raids sign up</a>
+                <a href="javascript:void(0);" class="icon" onclick="openNav()">
+                    <i class="fa fa-bars"></i>
+                </a>
                 </ul>
             </div>
         </nav>
@@ -1010,15 +1076,15 @@
             return i + "th";
         }
 
-        function gup( name, url ) {
+        function gup(name, url) {
             if (!url) url = location.href;
-            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-            var regexS = "[\\?&]"+name+"=([^&#]*)";
-            var regex = new RegExp( regexS );
-            var results = regex.exec( url );
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(url);
             return results == null ? null : results[1];
         }
-        
+
         $(document).ready(function () {
             for (let i = 0; i < bossCount; i++) {
                 randomSrc.push(`${bossPath}${i}.png`);
@@ -1040,10 +1106,10 @@
 
                     let currentPos = 1;
                     res.teams[0].pos = currentPos;
-                    for(let i = 1; i < res.teams.length; i++){
-                        if(res.teams[i].points == res.teams[i-1].points){
+                    for (let i = 1; i < res.teams.length; i++) {
+                        if (res.teams[i].points == res.teams[i - 1].points) {
                             res.teams[i].pos = currentPos;
-                        }else{
+                        } else {
                             currentPos++;
                             res.teams[i].pos = currentPos;
                         }
@@ -1163,25 +1229,25 @@
                     $('#modal__medal').removeClass("medal__circle--gold medal__circle--silver medal__circle--bronze medal__circle--white");
 
                     let position = $(this).attr("teampos");
-                    if(position == "1"){
+                    if (position == "1") {
                         $('#modal__medal').addClass("medal__circle--gold");
                     }
 
-                    if(position == "2"){
+                    if (position == "2") {
                         $('#modal__medal').addClass("medal__circle--silver");
                     }
 
-                    if(position == "3"){
+                    if (position == "3") {
                         $('#modal__medal').addClass("medal__circle--bronze");
                     }
 
-                    if(position >= 4){
+                    if (position >= 4) {
                         $('#modal__medal').addClass("medal__circle--white");
                     }
 
                 });
-                $('body').css({"height" : "auto"});
-                if(gup("team") != ""){
+                $('body').css({ "height": "auto" });
+                if (gup("team") != "") {
                     $('#team' + gup("team")).click();
                 }
                 console.log(res.teams);
@@ -1201,7 +1267,14 @@
             return 0;
         }
 
-
+        function openNav() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
     </script>
 </body>
 
