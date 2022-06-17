@@ -115,7 +115,7 @@ $(document).ready(function () {
 
 
     var date = new Date();
-    if(date.getTime() < 1630886400000){
+    if(date.getTime() < 1657756800000){
         $('.pulv-heading-signupclosed').css({"display" : "none"});
     }
 
