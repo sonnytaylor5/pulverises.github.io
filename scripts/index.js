@@ -62,8 +62,7 @@ $(document).ready(function () {
             hgLength -= 1;
             $('.pulv-input').last().remove();
         }else{
-            var audio = document.getElementById("audio");
-            audio.play();
+            alert("You can't remove any more.");
         }
     });
 
@@ -363,8 +362,6 @@ $(document).ready(function () {
                 console.log(data);
                 if (data.success) {
                     $('#form__bingosignup')[0].reset();
-                    var audio = document.getElementById("audio");
-                    audio.play();
                     alert("Your message has been sent.");
                 } else {
                     if (data && data.errors) {
