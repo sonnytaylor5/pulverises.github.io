@@ -49,6 +49,18 @@ $(document).ready(function(){
             $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7500</span>");
         }
     });
+
+    $.ajax({
+        type: 'GET',
+        url: 'https://sonnerrs-bot.herokuapp.com/prizepool/',
+        processData: false,
+        contentType: false,
+        cache: false
+    })
+    .done(function(data){
+        $('#prizepool').text(`PRIZE POOL: ${data}`);
+    });
+
     $.ajax({url: "https://sonnerrs-bot.herokuapp.com/team/", success: function(result){
         res = result;
         for(var i = 0; i < res.teams.length; i++){

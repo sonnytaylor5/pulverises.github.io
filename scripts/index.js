@@ -36,6 +36,16 @@ function currentSlide(n) {
     }
 }
 
+$.ajax({
+    type: 'GET',
+    url: 'https://sonnerrs-bot.herokuapp.com/prizepool/',
+    processData: false,
+    contentType: false,
+    cache: false
+})
+.done(function(data){
+    $('#prizepool').text(`PRIZE POOL: ${data}`);
+});
           
 function showSlides(n) {
     var i;
@@ -65,7 +75,6 @@ $(document).ready(function () {
             alert("You can't remove any more.");
         }
     });
-
 
     $('#hungergames-submit').click(function(e){
         var names = [];
