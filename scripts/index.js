@@ -35,17 +35,6 @@ function currentSlide(n) {
         $('.next').css({"display" : "block"});
     }
 }
-
-$.ajax({
-    type: 'GET',
-    url: 'https://sonnerrs-bot.herokuapp.com/prizepool/',
-    processData: false,
-    contentType: false,
-    cache: false
-})
-.done(function(data){
-    $('#prizepool').text(`PRIZE POOL: ${data}`);
-});
           
 function showSlides(n) {
     var i;

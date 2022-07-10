@@ -2,7 +2,7 @@ var res;
 var activeTeam;
 var socket;
 
-var pointArr = [0, 150,150,150,150,150, 150,150,200,100,100, 175,175,100,25,250 ,100,125,150,175,125 ,150,150,50,225,200, 250,250,200,250,175, 175,200,125,250,175, 25,150,225,200,125,  175,150,100,125,225, 100,50,75,100];
+var pointArr = [0, 150,150,150,150,150,175,250, 250,150,125,50,75,100,225, 175,100,100,50,100,200,125, 100,125,25,250,150,150,200, 150,100,200,200,250,100,75, 225,50,75,200,250,200,125, 25,250,150,100,75,50,150];
 var total = pointArr.reduce((partialSum, a) => partialSum + a, 0);
 
 function addBorders(teamNumber){ 
@@ -46,7 +46,7 @@ $(document).ready(function(){
 
         $('.counter').remove();
         for(var i = 0; i < res.teams.length; i++){
-            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7500</span>");
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7000</span>");
         }
     });
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
         }
 
         for(var i = 0; i < res.teams.length; i++){
-            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7500</span>");
+            $('#team' + res.teams[i].teamNumber).append("<span class='counter'>" + res.teams[i].points +"/7000</span>");
         }
         
       },error:function(result){
@@ -233,116 +233,3 @@ $(document).ready(function(){
         $("#team30").addClass("active");
     });
 });
-
-var novSet = false;
-var pulvSet = false;
-var mutantSet = false;
-var sarachnisSet = false;
-var bergSet = false;
-var stryhnsSet = false;
-var slepewithnanSet = false;
-var flompleSet = false;
-
-function novIsDetected() {
-    if(novSet){
-        return;
-    }
-    novSet = true;
-    $('#nov').css({"display" : "block"});
-    setTimeout(function () {
-        $("#nov").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#nov').css({"display" : "none"})
-        })
-    });
-}
-
-function flompleIsDetected() {
-    if(flompleSet){
-        return;
-    }
-    flompleSet = true;
-    $('#flomple').css({"display" : "block"});
-    setTimeout(function () {
-        $("#flomple").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#flomple').css({"display" : "none"})
-        })
-    });
-}
-
-function pulvIsDetected() {
-    if(pulvSet){
-        return;
-    }
-    pulvSet = true;
-    $('#pulv').css({"display" : "block"});
-    setTimeout(function () {
-        $("#pulv").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#pulv').css({"display" : "none"})
-        })
-    });
-}
-
-function mutantIsDetected() {
-    if(mutantSet){
-        return;
-    }
-    mutantSet = true;
-    $('#mutant').css({"display" : "block"});
-    setTimeout(function () {
-        $("#mutant").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#mutant').css({"display" : "none"})
-        })
-    });
-}
-
-function sarachnisIsDetected() {
-    if(sarachnisSet){
-        return;
-    }
-    sarachnisSet = true;
-    $('#sarachnis').css({"display" : "block"});
-    setTimeout(function () {
-        $("#sarachnis").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#sarachnis').css({"display" : "none"})
-        })
-    });
-}
-
-function bergIsDetected() {
-    if(bergSet){
-        return;
-    }
-    bergSet = true;
-    $('#berg').css({"display" : "block"});
-    setTimeout(function () {
-        $("#berg").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#berg').css({"display" : "none"})
-        })
-    });
-}
-
-function stryhnsIsDetected() {
-    if(stryhnsSet){
-        return;
-    }
-    stryhnsSet = true;
-    $('#stryhns').css({"display" : "block"});
-    setTimeout(function () {
-        $("#stryhns").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#stryhns').css({"display" : "none"})
-        })
-    });
-}
-
-function slepewithnanIsDetected() {
-    if(slepewithnanSet){
-        return;
-    }
-    slepewithnanSet = true;
-    $('#slepewithnan').css({"display" : "block"});
-    setTimeout(function () {
-        $("#slepewithnan").animate({ left: "100%", bottom: "100%" }, 10000, function(){
-            $('#slepewithnan').css({"display" : "none"})
-        })
-    });
-}
